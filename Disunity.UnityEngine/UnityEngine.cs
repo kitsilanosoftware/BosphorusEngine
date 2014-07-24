@@ -65,6 +65,13 @@ namespace Disunity.UnityEngine
 		public float a;
 	}
 
+	public enum FogMode
+	{
+		Linear = 1,
+		Exponential,
+		ExponentialSquared
+	}
+
 	public class RenderSettings
 	{
 		[YamlAlias("m_AmbientLight")]
@@ -88,7 +95,8 @@ namespace Disunity.UnityEngine
 		[YamlAlias("m_LinearFogEnd")]
 		public /* static */ float fogEndDistance { get; set; }
 
-		// public static FogMode fogMode { get; set; }
+		[YamlAlias("m_FogMode")]
+		public /* static */ FogMode fogMode { get; set; }
 
 		[YamlAlias("m_LinearFogStart")]
 		public /* static */ float fogStartDistance { get; set; }
