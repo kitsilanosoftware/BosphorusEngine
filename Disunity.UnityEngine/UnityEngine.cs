@@ -206,4 +206,41 @@ namespace Disunity.UnityEngine
 		// [YamlAlias("m_SkyboxMaterial")]
 		public /* static */ Material skybox { get; set; }
 	}
+
+	[Serializable]
+	public enum ColorSpace
+	{
+		Uninitialized,
+		Gamma,
+		Linear
+	}
+
+	public class LightmapData {
+		// public LightmapData ();
+
+		// public Texture2D lightmap { get; set; }
+		// public Texture2D lightmapFar { get; set; }
+		// public Texture2D lightmapNear { get; set; }
+	}
+
+	[Serializable]
+	public enum LightmapsMode {
+		Single,
+		Dual,
+		Directional
+	}
+
+	public class LightmapSettings: Object
+	{
+		[YamlAlias("m_BakedColorSpace")]
+		public /* static */ ColorSpace bakedColorSpace { get; set; }
+
+		[YamlAlias("m_Lightmaps")]
+		public /* static */ LightmapData[] lightmaps { get; set; }
+
+		[YamlAlias("m_LightmapsMode")]
+		public /* static */ LightmapsMode lightmapsMode { get; set; }
+
+		// public static LightProbes lightProbes { get; set; }
+	}
 }
