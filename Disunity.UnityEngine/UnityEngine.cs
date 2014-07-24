@@ -42,7 +42,10 @@ namespace Disunity.UnityEngine
 		// public static bool operator == (Object x, Object y);
 		// public static bool operator != (Object x, Object y);
 
+		[YamlAlias("m_ObjectHideFlags")]
 		public HideFlags hideFlags { get; set; }
+
+		[YamlAlias("m_Name")]
 		public string name { get; set; }
 	}
 
@@ -92,14 +95,14 @@ namespace Disunity.UnityEngine
 		// public void SetVector (int nameID, Vector4 vector);
 		// public void SetVector (string propertyName, Vector4 vector);
 
-		public Color color { get; set; }
+		// public Color color { get; set; }
 		// public Texture mainTexture { get; set; }
 		// public Vector2 mainTextureOffset { get; set; }
 		// public Vector2 mainTextureScale { get; set; }
-		public int passCount { get; private set; }
-		public int renderQueue { get; set; }
+		// public int passCount { get; private set; }
+		// public int renderQueue { get; set; }
 		// public Shader shader { get; set; }
-		public string [] shaderKeywords { get; set; }
+		// public string [] shaderKeywords { get; set; }
 	}
 
 	public struct Color
@@ -158,6 +161,7 @@ namespace Disunity.UnityEngine
 		// public float this [int index] { get; set; }
 		// public Color linear { get; }
 
+		// YAML: Direct mapping.
 		public float r;
 		public float g;
 		public float b;
@@ -203,8 +207,9 @@ namespace Disunity.UnityEngine
 		[YamlAlias("m_HaloStrength")]
 		public /* static */ float haloStrength { get; set; }
 
+		// TODO: fileID mapping.
 		// [YamlAlias("m_SkyboxMaterial")]
-		public /* static */ Material skybox { get; set; }
+		// public /* static */ Material skybox { get; set; }
 	}
 
 	[Serializable]
@@ -313,7 +318,7 @@ namespace Disunity.UnityEngine
 
 		// Not a direct mapping.
 		// [YamlAlias("m_StaticEditorFlags")]
-		public bool isStatic { get; set; }
+		// public bool isStatic { get; set; }
 
 		[YamlAlias("m_Layer")]
 		public int layer { get; set; }
@@ -367,7 +372,7 @@ namespace Disunity.UnityEngine
 		// public void SendMessageUpwards (string methodName, object value, SendMessageOptions options);
 		// public void SendMessageUpwards (string methodName, SendMessageOptions options);
 
-		public bool active { get; set; }
+		// public bool active { get; set; }
 
 		// public Animation animation { get; }
 		// public AudioSource audio { get; }
@@ -388,7 +393,7 @@ namespace Disunity.UnityEngine
 		// public Rigidbody rigidbody { get; }
 		// public Rigidbody2D rigidbody2D { get; }
 
-		public string tag { get; set; }
+		// public string tag { get; set; }
 
 		// public Transform transform { get; }
 	}
@@ -492,6 +497,8 @@ namespace Disunity.UnityEngine
 		// }
 
 		public const float kEpsilon = 1E-05f;
+
+		// YAML: Direct mapping.
 		public float x;
 		public float y;
 		public float z;
@@ -561,6 +568,8 @@ namespace Disunity.UnityEngine
 		// }
 
 		public const float kEpsilon = 1E-06f;
+
+		// YAML: Direct mapping.
 		public float x;
 		public float y;
 		public float z;
@@ -695,6 +704,8 @@ namespace Disunity.UnityEngine
 		// }
 
 		public const float kEpsilon = 1E-05f;
+
+		// YAML: Direct mapping.
 		public float x;
 		public float y;
 		public float z;
@@ -726,14 +737,14 @@ namespace Disunity.UnityEngine
 
 		// TODO: Exception, Key name fileID does not match Transform.
 		// [YamlAlias("m_LightProbeAnchor")]
-		public Transform lightProbeAnchor { get; set; }
+		// public Transform lightProbeAnchor { get; set; }
 
 		// public Matrix4x4 localToWorldMatrix { get; }
 		// public Material material { get; set; }
 
 		// TODO: Exception, Key name fileID does not match Material.
 		// [YamlAlias("m_Materials")]
-		public Material[] materials { get; set; }
+		// public Material[] materials { get; set; }
 
 		[YamlAlias("m_ReceiveShadows")]
 		public bool receiveShadows { get; set; }
@@ -831,14 +842,15 @@ namespace Disunity.UnityEngine
 		// public int particleCount { get; }
 		// public float playbackSpeed { get; set; }
 
+		// YAML: Direct mapping.
 		public bool playOnAwake { get; set; }
-
 		public uint randomSeed { get; set; }
 
 		// public int safeCollisionEventSize { get; }
 		// public ParticleSystemSimulationSpace simulationSpace { get; set; }
 		// public Color startColor { get; set; }
 
+		// YAML: Direct mapping.
 		public float startDelay { get; set; }
 
 		// public float startLifetime { get; set; }
