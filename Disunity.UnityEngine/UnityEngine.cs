@@ -868,4 +868,159 @@ namespace Disunity.UnityEngine
 			// TODO
 		}
 	}
+
+	public class Behaviour: Component {
+		[YamlAlias("m_Enabled")]
+		public bool enabled { get; set; }
+	}
+
+	public struct Vector2 {
+
+		// public Vector2 (float x, float y);
+
+		// public static float Angle (Vector2 from, Vector2 to);
+		// public static Vector2 ClampMagnitude (Vector2 vector, float maxLength);
+		// public static float Distance (Vector2 a, Vector2 b);
+		// public static float Dot (Vector2 lhs, Vector2 rhs);
+		// public static Vector2 Lerp (Vector2 from, Vector2 to, float t);
+		// public static Vector2 Max (Vector2 lhs, Vector2 rhs);
+		// public static Vector2 Min (Vector2 lhs, Vector2 rhs);
+		// public static Vector2 MoveTowards (Vector2 current, Vector2 target, float maxDistanceDelta);
+		// public static Vector2 Scale (Vector2 a, Vector2 b);
+		// public static float SqrMagnitude (Vector2 a);
+		// public override bool Equals (object other);
+		// public override int GetHashCode ();
+		// public void Normalize ();
+		// public void Scale (Vector2 scale);
+		// public void Set (float new_x, float new_y);
+		// public float SqrMagnitude ();
+		// public override string ToString ();
+		// public string ToString (string format);
+
+		// public static Vector2 operator + (Vector2 a, Vector2 b);
+		// public static Vector2 operator - (Vector2 a, Vector2 b);
+		// public static Vector2 operator - (Vector2 a);
+		// public static Vector2 operator * (Vector2 a, float d);
+		// public static Vector2 operator * (float d, Vector2 a);
+		// public static Vector2 operator / (Vector2 a, float d);
+		// public static bool operator == (Vector2 lhs, Vector2 rhs);
+		// public static bool operator != (Vector2 lhs, Vector2 rhs);
+		// public static implicit operator Vector2 (Vector3 v);
+		// public static implicit operator Vector3 (Vector2 v);
+
+		// public static Vector2 one {
+		//	get;
+		// }
+		// public static Vector2 right {
+		//	get;
+		// }
+		// public static Vector2 up {
+		//	get;
+		// }
+		// public static Vector2 zero {
+		//	get;
+		// }
+		// public float this [int index] {
+		//	get;
+		//	set;
+		// }
+		// public float magnitude {
+		//	get;
+		// }
+		// public Vector2 normalized {
+		//	get;
+		// }
+		// public float sqrMagnitude {
+		//	get;
+		// }
+
+		public const float kEpsilon = 1E-05f;
+
+		// YAML: Direct mapping.
+		public float x;
+		public float y;
+	}
+
+	[Serializable]
+	public enum LightRenderMode {
+		Auto,
+		ForcePixel,
+		ForceVertex
+	}
+
+	[Serializable]
+	public enum LightShadows {
+		None,
+		Hard,
+		Soft
+	}
+
+	[Serializable]
+	public enum LightType {
+		Spot,
+		Directional,
+		Point,
+		Area
+	}
+
+	public sealed class Light: Behaviour {
+
+		// public Light ();
+
+		// public static Light[] GetLights (LightType type, int layer);
+
+		// public static int pixelLightCount { get; set; }
+
+		[YamlAlias("m_ActuallyLightmapped")]
+		public bool alreadyLightmapped { get; set; }
+
+		[YamlAlias("m_AreaSize")]
+		public Vector2 areaSize { get; set; }
+
+		// public bool attenuate { get; set; }
+
+		[YamlAlias("m_Color")]
+		public Color color { get; set; }
+
+		// TODO: type, fileID mapping.
+		// [YamlAlias("m_Cookie")]
+		// public Texture cookie { get; set; }
+
+		[YamlAlias("m_CookieSize")]
+		public float cookieSize { get; set; }
+
+		// TODO: Indirect mapping.
+		// [YamlAlias("m_CullingMask")]
+		// public int cullingMask { get; set; }
+
+		// TODO: type, fileID mapping.
+		// [YamlAlias("m_Flare")]
+		// public Flare flare { get; set; }
+
+		[YamlAlias("m_Intensity")]
+		public float intensity { get; set; }
+
+		[YamlAlias("m_Range")]
+		public float range { get; set; }
+
+		[YamlAlias("m_RenderMode")]
+		public LightRenderMode renderMode { get; set; }
+
+		// public float shadowBias { get; set; }
+		// public float shadowConstantBias { get; set; }
+		// public float shadowObjectSizeBias { get; set; }
+
+		[YamlAlias("m_Shadows")]
+		public LightShadows shadows { get; set; }
+
+		// public float shadowSoftness { get; set; }
+		// public float shadowSoftnessFade { get; set; }
+		// public float shadowStrength { get; set; }
+
+		[YamlAlias("m_SpotAngle")]
+		public float spotAngle { get; set; }
+
+		[YamlAlias("m_Type")]
+		public LightType type { get; set; }
+	}
 }
