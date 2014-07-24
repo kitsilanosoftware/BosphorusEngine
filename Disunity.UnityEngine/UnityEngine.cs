@@ -1126,4 +1126,12 @@ namespace Disunity.UnityEngine
 
 		// public bool useGUILayout { get; set; }
 	}
+
+	public sealed class LightProbeGroup: Component
+	{
+		// public LightProbeGroup ();
+
+		[YamlAlias("m_SourcePositions")]
+		public Vector3[] probePositions { get; set; }
+	}
 }
