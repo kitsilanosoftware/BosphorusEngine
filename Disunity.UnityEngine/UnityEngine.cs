@@ -634,4 +634,124 @@ namespace Disunity.UnityEngine
 		// public Vector3 up { get; set; }
 		// public Matrix4x4 worldToLocalMatrix { get; }
 	}
+
+	public struct Vector4
+	{
+		// public Vector4 (float x, float y, float z, float w);
+		// public Vector4 (float x, float y, float z);
+		// public Vector4 (float x, float y);
+
+		// public static float Distance (Vector4 a, Vector4 b);
+		// public static float Dot (Vector4 a, Vector4 b);
+		// public static Vector4 Lerp (Vector4 from, Vector4 to, float t);
+		// public static float Magnitude (Vector4 a);
+		// public static Vector4 Max (Vector4 lhs, Vector4 rhs);
+		// public static Vector4 Min (Vector4 lhs, Vector4 rhs);
+		// public static Vector4 MoveTowards (Vector4 current, Vector4 target, float maxDistanceDelta);
+		// public static Vector4 Normalize (Vector4 a);
+		// public static Vector4 Project (Vector4 a, Vector4 b);
+		// public static Vector4 Scale (Vector4 a, Vector4 b);
+		// public static float SqrMagnitude (Vector4 a);
+		// public override bool Equals (object other);
+		// public override int GetHashCode ();
+		// public void Normalize ();
+		// public void Scale (Vector4 scale);
+		// public void Set (float new_x, float new_y, float new_z, float new_w);
+		// public float SqrMagnitude ();
+		// public override string ToString ();
+		// public string ToString (string format);
+
+		// public static Vector4 operator + (Vector4 a, Vector4 b);
+		// public static Vector4 operator - (Vector4 a, Vector4 b);
+		// public static Vector4 operator - (Vector4 a);
+		// public static Vector4 operator * (Vector4 a, float d);
+		// public static Vector4 operator * (float d, Vector4 a);
+		// public static Vector4 operator / (Vector4 a, float d);
+		// public static bool operator == (Vector4 lhs, Vector4 rhs);
+		// public static bool operator != (Vector4 lhs, Vector4 rhs);
+		// public static implicit operator Vector4 (Vector3 v);
+		// public static implicit operator Vector3 (Vector4 v);
+		// public static implicit operator Vector4 (Vector2 v);
+		// public static implicit operator Vector2 (Vector4 v);
+
+		// public static Vector4 one {
+		//	get;
+		// }
+		// public static Vector4 zero {
+		//	get;
+		// }
+		// public float this [int index] {
+		//	get;
+		//	set;
+		// }
+		// public float magnitude {
+		//	get;
+		// }
+		// public Vector4 normalized {
+		//	get;
+		// }
+		// public float sqrMagnitude {
+		//	get;
+		// }
+
+		public const float kEpsilon = 1E-05f;
+		public float x;
+		public float y;
+		public float z;
+		public float w;
+	}
+
+	public class Renderer: Component {
+
+		// public void GetPropertyBlock (MaterialPropertyBlock dest);
+		// public void Render (int material);
+		// public void SetPropertyBlock (MaterialPropertyBlock properties);
+
+		// public Bounds bounds { get; }
+
+		[YamlAlias("m_CastShadows")]
+		public bool castShadows { get; set; }
+
+		[YamlAlias("m_Enabled")]
+		public bool enabled { get; set; }
+
+		// public bool isPartOfStaticBatch { get; }
+		// public bool isVisible { get; }
+
+		[YamlAlias("m_LightmapIndex")]
+		public int lightmapIndex { get; set; }
+
+		[YamlAlias("m_LightmapTilingOffset")]
+		public Vector4 lightmapTilingOffset { get; set; }
+
+		// TODO: Exception, Key name fileID does not match Transform.
+		// [YamlAlias("m_LightProbeAnchor")]
+		public Transform lightProbeAnchor { get; set; }
+
+		// public Matrix4x4 localToWorldMatrix { get; }
+		// public Material material { get; set; }
+
+		// TODO: Exception, Key name fileID does not match Material.
+		// [YamlAlias("m_Materials")]
+		public Material[] materials { get; set; }
+
+		[YamlAlias("m_ReceiveShadows")]
+		public bool receiveShadows { get; set; }
+
+		// public Material sharedMaterial { get; set; }
+		// public Material[] sharedMaterials { get; set; }
+
+		[YamlAlias("m_SortingLayerID")]
+		public int sortingLayerID { get; set; }
+
+		// public string sortingLayerName { get; set; }
+
+		[YamlAlias("m_SortingOrder")]
+		public int sortingOrder { get; set; }
+
+		[YamlAlias("m_UseLightProbes")]
+		public bool useLightProbes { get; set; }
+
+		// public Matrix4x4 worldToLocalMatrix { get; }
+	}
 }
