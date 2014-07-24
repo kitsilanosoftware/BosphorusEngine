@@ -1337,4 +1337,41 @@ namespace Disunity.UnityEngine
 		// public static float volume { get; set; }
 		// public AudioVelocityUpdateMode velocityUpdateMode { get; set; }
 	}
+
+	public class Collider: Component
+	{
+		// public Collider ();
+
+		// public Vector3 ClosestPointOnBounds (Vector3 position);
+		// public bool Raycast (Ray ray, out RaycastHit hitInfo, float distance);
+
+		// public Rigidbody attachedRigidbody { get; }
+		// public Bounds bounds { get; }
+
+		[YamlAlias("m_Enabled")]
+		public bool enabled { get; set; }
+
+		[YamlAlias("m_IsTrigger")]
+		public bool isTrigger { get; set; }
+
+		// TODO: via fileID.
+		// [YamlAlias("m_Material")]
+		// public PhysicMaterial material { get; set; }
+		// public PhysicMaterial sharedMaterial { get; set; }
+	}
+
+	public sealed class MeshCollider: Collider
+	{
+		// public MeshCollider ();
+
+		[YamlAlias("m_Convex")]
+		public bool convex { get; set; }
+
+		// [YamlAlias("m_Mesh")]
+		// public Mesh mesh { get; set; }
+		// public Mesh sharedMesh { get; set; }
+
+		[YamlAlias("m_SmoothSphereCollisions")]
+		public bool smoothSphereCollisions { get; set; }
+	}
 }
