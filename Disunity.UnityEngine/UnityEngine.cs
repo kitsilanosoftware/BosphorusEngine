@@ -3,6 +3,109 @@ using YamlDotNet.Serialization;
 
 namespace Disunity.UnityEngine
 {
+	[Serializable]
+	[Flags]
+	public enum HideFlags
+	{
+		None,
+		HideInHierarchy,
+		HideInInspector,
+		DontSave,
+		NotEditable,
+		HideAndDontSave
+	}
+
+	public class Object
+	{
+		// public static void Destroy (Object obj);
+		// public static void Destroy (Object obj, float t);
+		// public static void DestroyImmediate (Object obj);
+		// public static void DestroyImmediate (Object obj, bool allowDestroyingAssets);
+		// public static void DestroyObject (Object obj);
+		// public static void DestroyObject (Object obj, float t);
+		// public static void DontDestroyOnLoad (Object target);
+		// public static T FindObjectOfType<T> () where T : Object;
+		// public static Object FindObjectOfType (Type type);
+		// public static T[] FindObjectsOfType<T> () where T : Object;
+		// public static Object[] FindObjectsOfType (Type type);
+		// [Obsolete("Please use Resources.FindObjectsOfTypeAll instead")]
+		// public static Object[] FindObjectsOfTypeAll (Type type);
+		// [Obsolete("use Resources.FindObjectsOfTypeAll instead.")]
+		// public static Object[] FindObjectsOfTypeIncludingAssets (Type type);
+		// [Obsolete("use Object.FindObjectsOfType instead.")]
+		// public static Object[] FindSceneObjectsOfType (Type type);
+		// public static Object Instantiate (Object original);
+		// public static Object Instantiate (Object original, Vector3 position, Quaternion rotation);
+		// public override bool Equals (object o);
+		// public override int GetHashCode ();
+		// public int GetInstanceID ();
+		// public override string ToString ();
+
+		// public static implicit operator bool (Object exists);
+		// public static bool operator == (Object x, Object y);
+		// public static bool operator != (Object x, Object y);
+
+		public HideFlags hideFlags { get; set; }
+		public string name { get; set; }
+	}
+
+	public class Material: Object
+	{
+		// public Material (string contents);
+		// public Material (Shader shader);
+		// public Material (Material source);
+
+		// [Obsolete("Use the Material constructor instead.")]
+		// public static Material Create (string scriptContents);
+		// public void CopyPropertiesFromMaterial (Material mat);
+		// public void DisableKeyword (string keyword);
+		// public void EnableKeyword (string keyword);
+		// public Color GetColor (int nameID);
+		// public Color GetColor (string propertyName);
+		// public float GetFloat (int nameID);
+		// public float GetFloat (string propertyName);
+		// public int GetInt (int nameID);
+		// public int GetInt (string propertyName);
+		// public Matrix4x4 GetMatrix (int nameID);
+		// public Matrix4x4 GetMatrix (string propertyName);
+		// public string GetTag (string tag, bool searchFallbacks);
+		// public string GetTag (string tag, bool searchFallbacks, string defaultValue);
+		// public Texture GetTexture (int nameID);
+		// public Texture GetTexture (string propertyName);
+		// public Vector2 GetTextureOffset (string propertyName);
+		// public Vector2 GetTextureScale (string propertyName);
+		// public Vector4 GetVector (int nameID);
+		// public Vector4 GetVector (string propertyName);
+		// public bool HasProperty (int nameID);
+		// public bool HasProperty (string propertyName);
+		// public void Lerp (Material start, Material end, float t);
+		// public void SetBuffer (string propertyName, ComputeBuffer buffer);
+		// public void SetColor (int nameID, Color color);
+		// public void SetColor (string propertyName, Color color);
+		// public void SetFloat (int nameID, float value);
+		// public void SetFloat (string propertyName, float value);
+		// public void SetInt (int nameID, int value);
+		// public void SetInt (string propertyName, int value);
+		// public void SetMatrix (int nameID, Matrix4x4 matrix);
+		// public void SetMatrix (string propertyName, Matrix4x4 matrix);
+		// public bool SetPass (int pass);
+		// public void SetTexture (int nameID, Texture texture);
+		// public void SetTexture (string propertyName, Texture texture);
+		// public void SetTextureOffset (string propertyName, Vector2 offset);
+		// public void SetTextureScale (string propertyName, Vector2 scale);
+		// public void SetVector (int nameID, Vector4 vector);
+		// public void SetVector (string propertyName, Vector4 vector);
+
+		public Color color { get; set; }
+		// public Texture mainTexture { get; set; }
+		// public Vector2 mainTextureOffset { get; set; }
+		// public Vector2 mainTextureScale { get; set; }
+		public int passCount { get; private set; }
+		public int renderQueue { get; set; }
+		// public Shader shader { get; set; }
+		public string [] shaderKeywords { get; set; }
+	}
+
 	public struct Color
 	{
 		public Color (float r, float g, float b, float a)
@@ -104,6 +207,7 @@ namespace Disunity.UnityEngine
 		[YamlAlias("m_HaloStrength")]
 		public /* static */ float haloStrength { get; set; }
 
-		// public static Material skybox { get; set; }
+		// [YamlAlias("m_SkyboxMaterial")]
+		public /* static */ Material skybox { get; set; }
 	}
 }
