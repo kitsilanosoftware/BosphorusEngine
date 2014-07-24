@@ -28,11 +28,8 @@ namespace Disunity.UnityEngine
 		// public static Object FindObjectOfType (Type type);
 		// public static T[] FindObjectsOfType<T> () where T : Object;
 		// public static Object[] FindObjectsOfType (Type type);
-		// [Obsolete("Please use Resources.FindObjectsOfTypeAll instead")]
 		// public static Object[] FindObjectsOfTypeAll (Type type);
-		// [Obsolete("use Resources.FindObjectsOfTypeAll instead.")]
 		// public static Object[] FindObjectsOfTypeIncludingAssets (Type type);
-		// [Obsolete("use Object.FindObjectsOfType instead.")]
 		// public static Object[] FindSceneObjectsOfType (Type type);
 		// public static Object Instantiate (Object original);
 		// public static Object Instantiate (Object original, Vector3 position, Quaternion rotation);
@@ -55,7 +52,6 @@ namespace Disunity.UnityEngine
 		// public Material (Shader shader);
 		// public Material (Material source);
 
-		// [Obsolete("Use the Material constructor instead.")]
 		// public static Material Create (string scriptContents);
 		// public void CopyPropertiesFromMaterial (Material mat);
 		// public void DisableKeyword (string keyword);
