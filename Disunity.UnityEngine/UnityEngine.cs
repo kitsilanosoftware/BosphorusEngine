@@ -1323,4 +1323,18 @@ namespace Disunity.UnityEngine
 		// public Vector3 velocity { get; }
 		// public Matrix4x4 worldToCameraMatrix { get; set; }
 	}
+
+	public sealed class AudioListener: Behaviour
+	{
+		// public AudioListener ();
+
+		// public static float [] GetOutputData (int numSamples, int channel);
+		// public static void GetOutputData (float [] samples, int channel);
+		// public static float [] GetSpectrumData (int numSamples, int channel, FFTWindow window);
+		// public static void GetSpectrumData (float [] samples, int channel, FFTWindow window);
+
+		// public static bool pause { get; set; }
+		// public static float volume { get; set; }
+		// public AudioVelocityUpdateMode velocityUpdateMode { get; set; }
+	}
 }
