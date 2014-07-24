@@ -331,4 +331,307 @@ namespace Disunity.UnityEngine
 
 		// public Transform transform { get; }
 	}
+
+	public class Component: Object
+	{
+		// public Component ();
+
+		// public void BroadcastMessage (string methodName);
+		// public void BroadcastMessage (string methodName, object parameter);
+		// public void BroadcastMessage (string methodName, object parameter, SendMessageOptions options);
+		// public void BroadcastMessage (string methodName, SendMessageOptions options);
+		// public bool CompareTag (string tag);
+		// public T GetComponent<T> () where T : Component;
+		// public Component GetComponent (string type);
+		// public Component GetComponent (Type type);
+		// public T GetComponentInChildren<T> () where T : Component;
+		// public Component GetComponentInChildren (Type t);
+		// public T GetComponentInParent<T> () where T : Component;
+		// public Component GetComponentInParent (Type t);
+		// public T[] GetComponents<T> () where T : Component;
+		// public Component[] GetComponents (Type type);
+		// public T[] GetComponentsInChildren<T> () where T : Component;
+		// public T[] GetComponentsInChildren<T> (bool includeInactive) where T : Component;
+		// public Component[] GetComponentsInChildren (Type t);
+		// public Component[] GetComponentsInChildren (Type t, bool includeInactive);
+		// public T[] GetComponentsInParent<T> () where T : Component;
+		// public T[] GetComponentsInParent<T> (bool includeInactive) where T : Component;
+		// public Component[] GetComponentsInParent (Type t);
+		// public Component[] GetComponentsInParent (Type t, bool includeInactive);
+		// public void SendMessage (string methodName);
+		// public void SendMessage (string methodName, object value);
+		// public void SendMessage (string methodName, object value, SendMessageOptions options);
+		// public void SendMessage (string methodName, SendMessageOptions options);
+		// public void SendMessageUpwards (string methodName);
+		// public void SendMessageUpwards (string methodName, object value);
+		// public void SendMessageUpwards (string methodName, object value, SendMessageOptions options);
+		// public void SendMessageUpwards (string methodName, SendMessageOptions options);
+
+		public bool active { get; set; }
+
+		// public Animation animation { get; }
+		// public AudioSource audio { get; }
+		// public Camera camera { get; }
+		// public Collider collider { get; }
+		// public Collider2D collider2D { get; }
+		// public ConstantForce constantForce { get; }
+		// public GameObject gameObject { get; }
+		// public GUIElement guiElement { get; }
+		// public GUIText guiText { get; }
+		// public GUITexture guiTexture { get; }
+		// public HingeJoint hingeJoint { get; }
+		// public Light light { get; }
+		// public NetworkView networkView { get; }
+		// public ParticleEmitter particleEmitter { get; }
+		// public ParticleSystem particleSystem { get; }
+		// public Renderer renderer { get; }
+		// public Rigidbody rigidbody { get; }
+		// public Rigidbody2D rigidbody2D { get; }
+
+		public string tag { get; set; }
+
+		// public Transform transform { get; }
+	}
+
+	public struct Vector3
+	{
+		public Vector3(float x, float y, float z)
+		{
+			this.x = x;
+			this.y = y;
+			this.z = z;
+		}
+
+		public Vector3(float x, float y)
+		{
+			this.x = x;
+			this.y = y;
+			this.z = 0;
+		}
+
+		// public static float Angle (Vector3 from, Vector3 to);
+		// public static float AngleBetween (Vector3 from, Vector3 to);
+		// public static Vector3 ClampMagnitude (Vector3 vector, float maxLength);
+		// public static Vector3 Cross (Vector3 lhs, Vector3 rhs);
+		// public static float Distance (Vector3 a, Vector3 b);
+		// public static float Dot (Vector3 lhs, Vector3 rhs);
+		// public static Vector3 Exclude (Vector3 excludeThis, Vector3 fromThat);
+		// public static Vector3 Lerp (Vector3 from, Vector3 to, float t);
+		// public static float Magnitude (Vector3 a);
+		// public static Vector3 Max (Vector3 lhs, Vector3 rhs);
+		// public static Vector3 Min (Vector3 lhs, Vector3 rhs);
+		// public static Vector3 MoveTowards (Vector3 current, Vector3 target, float maxDistanceDelta);
+		// public static Vector3 Normalize (Vector3 value);
+		// public static void OrthoNormalize (ref Vector3 normal, ref Vector3 tangent);
+		// public static void OrthoNormalize (ref Vector3 normal, ref Vector3 tangent, ref Vector3 binormal);
+		// public static Vector3 Project (Vector3 vector, Vector3 onNormal);
+		// public static Vector3 Reflect (Vector3 inDirection, Vector3 inNormal);
+		// public static Vector3 RotateTowards (Vector3 current, Vector3 target, float maxRadiansDelta, float maxMagnitudeDelta);
+		// public static Vector3 Scale (Vector3 a, Vector3 b);
+		// public static Vector3 Slerp (Vector3 from, Vector3 to, float t);
+		// public static Vector3 SmoothDamp (Vector3 current, Vector3 target, ref Vector3 currentVelocity, float smoothTime);
+		// public static Vector3 SmoothDamp (Vector3 current, Vector3 target, ref Vector3 currentVelocity, float smoothTime, float maxSpeed);
+		// public static Vector3 SmoothDamp (Vector3 current, Vector3 target, ref Vector3 currentVelocity, float smoothTime, float maxSpeed, float deltaTime);
+		// public static float SqrMagnitude (Vector3 a);
+		// public override bool Equals (object other);
+		// public override int GetHashCode ();
+		// public void Normalize ();
+		// public void Scale (Vector3 scale);
+		// public void Set (float new_x, float new_y, float new_z);
+		// public override string ToString ();
+		// public string ToString (string format);
+
+		// public static Vector3 operator + (Vector3 a, Vector3 b);
+		// public static Vector3 operator - (Vector3 a, Vector3 b);
+		// public static Vector3 operator - (Vector3 a);
+		// public static Vector3 operator * (Vector3 a, float d);
+		// public static Vector3 operator * (float d, Vector3 a);
+		// public static Vector3 operator / (Vector3 a, float d);
+		// public static bool operator == (Vector3 lhs, Vector3 rhs);
+		// public static bool operator != (Vector3 lhs, Vector3 rhs);
+
+		// public static Vector3 back {
+		//	get;
+		// }
+		// public static Vector3 down {
+		//	get;
+		// }
+		// public static Vector3 forward {
+		//	get;
+		// }
+		// public static Vector3 fwd {
+		//	get;
+		// }
+		// public static Vector3 left {
+		//	get;
+		// }
+		// public static Vector3 one {
+		//	get;
+		// }
+		// public static Vector3 right {
+		//	get;
+		// }
+		// public static Vector3 up {
+		//	get;
+		// }
+		// public static Vector3 zero {
+		//	get;
+		// }
+		// public float this [int index] {
+		//	get;
+		//	set;
+		// }
+		// public float magnitude {
+		//	get;
+		// }
+		// public Vector3 normalized {
+		//	get;
+		// }
+		// public float sqrMagnitude {
+		//	get;
+		// }
+
+		public const float kEpsilon = 1E-05f;
+		public float x;
+		public float y;
+		public float z;
+	}
+
+	public struct Quaternion {
+
+		public Quaternion(float x, float y, float z, float w)
+		{
+			this.x = x;
+			this.y = y;
+			this.z = z;
+			this.w = w;
+		}
+
+		// public static float Angle (Quaternion a, Quaternion b);
+		// public static Quaternion AngleAxis (float angle, Vector3 axis);
+		// public static Quaternion AxisAngle (Vector3 axis, float angle);
+		// public static float Dot (Quaternion a, Quaternion b);
+		// public static Quaternion Euler (float x, float y, float z);
+		// public static Quaternion Euler (Vector3 euler);
+		// public static Quaternion EulerAngles (float x, float y, float z);
+		// public static Quaternion EulerAngles (Vector3 euler);
+		// public static Quaternion EulerRotation (float x, float y, float z);
+		// public static Quaternion EulerRotation (Vector3 euler);
+		// public static Quaternion FromToRotation (Vector3 fromDirection, Vector3 toDirection);
+		// public static Quaternion Inverse (Quaternion rotation);
+		// public static Quaternion Lerp (Quaternion from, Quaternion to, float t);
+		// public static Quaternion LookRotation (Vector3 forward);
+		// public static Quaternion LookRotation (Vector3 forward, Vector3 upwards);
+		// public static Quaternion RotateTowards (Quaternion from, Quaternion to, float maxDegreesDelta);
+		// public static Quaternion Slerp (Quaternion from, Quaternion to, float t);
+		// public static Vector3 ToEulerAngles (Quaternion rotation);
+		// public override bool Equals (object other);
+		// public override int GetHashCode ();
+		// public void Set (float new_x, float new_y, float new_z, float new_w);
+		// public void SetAxisAngle (Vector3 axis, float angle);
+		// public void SetEulerAngles (float x, float y, float z);
+		// public void SetEulerAngles (Vector3 euler);
+		// public void SetEulerRotation (float x, float y, float z);
+		// public void SetEulerRotation (Vector3 euler);
+		// public void SetFromToRotation (Vector3 fromDirection, Vector3 toDirection);
+		// public void SetLookRotation (Vector3 view);
+		// public void SetLookRotation (Vector3 view, Vector3 up);
+		// public void ToAngleAxis (out float angle, out Vector3 axis);
+		// public void ToAxisAngle (out Vector3 axis, out float angle);
+		// public Vector3 ToEuler ();
+		// public Vector3 ToEulerAngles ();
+		// public override string ToString ();
+		// public string ToString (string format);
+
+		// public static Quaternion operator * (Quaternion lhs, Quaternion rhs);
+		// public static Vector3 operator * (Quaternion rotation, Vector3 point);
+		// public static bool operator == (Quaternion lhs, Quaternion rhs);
+		// public static bool operator != (Quaternion lhs, Quaternion rhs);
+
+		// public static Quaternion identity {
+		//	get;
+		// }
+		// public Vector3 eulerAngles {
+		//	get;
+		//	set;
+		// }
+		// public float this [int index] {
+		//	get;
+		//	set;
+		// }
+
+		public const float kEpsilon = 1E-06f;
+		public float x;
+		public float y;
+		public float z;
+		public float w;
+	}
+
+	public sealed class Transform: Component
+		// System.Collections.IEnumerable
+	{
+		// public void DetachChildren ();
+		// public Transform Find (string name);
+		// public Transform FindChild (string name);
+		// public Transform GetChild (int index);
+		// public int GetChildCount ();
+		// public System.Collections.IEnumerator GetEnumerator ();
+		// public int GetSiblingIndex ();
+		// public Vector3 InverseTransformDirection (float x, float y, float z);
+		// public Vector3 InverseTransformDirection (Vector3 direction);
+		// public Vector3 InverseTransformPoint (float x, float y, float z);
+		// public Vector3 InverseTransformPoint (Vector3 position);
+		// public bool IsChildOf (Transform parent);
+		// public void LookAt (Transform target);
+		// public void LookAt (Transform target, Vector3 worldUp);
+		// public void LookAt (Vector3 worldPosition);
+		// public void LookAt (Vector3 worldPosition, Vector3 worldUp);
+		// public void Rotate (float xAngle, float yAngle, float zAngle);
+		// public void Rotate (float xAngle, float yAngle, float zAngle, Space relativeTo);
+		// public void Rotate (Vector3 eulerAngles);
+		// public void Rotate (Vector3 axis, float angle);
+		// public void Rotate (Vector3 axis, float angle, Space relativeTo);
+		// public void Rotate (Vector3 eulerAngles, Space relativeTo);
+		// public void RotateAround (Vector3 axis, float angle);
+		// public void RotateAround (Vector3 point, Vector3 axis, float angle);
+		// public void RotateAroundLocal (Vector3 axis, float angle);
+		// public void SetAsFirstSibling ();
+		// public void SetAsLastSibling ();
+		// public void SetSiblingIndex (int index);
+		// public Vector3 TransformDirection (float x, float y, float z);
+		// public Vector3 TransformDirection (Vector3 direction);
+		// public Vector3 TransformPoint (float x, float y, float z);
+		// public Vector3 TransformPoint (Vector3 position);
+		// public void Translate (float x, float y, float z);
+		// public void Translate (float x, float y, float z, Space relativeTo);
+		// public void Translate (float x, float y, float z, Transform relativeTo);
+		// public void Translate (Vector3 translation);
+		// public void Translate (Vector3 translation, Space relativeTo);
+		// public void Translate (Vector3 translation, Transform relativeTo);
+
+		// public int childCount { get; }
+		// public Vector3 eulerAngles { get; set; }
+		// public Vector3 forward { get; set; }
+		// public bool hasChanged { get; set; }
+		// public Vector3 localEulerAngles { get; set; }
+
+		[YamlAlias("m_LocalPosition")]
+		public Vector3 localPosition { get; set; }
+
+		[YamlAlias("m_LocalRotation")]
+		public Quaternion localRotation { get; set; }
+
+		[YamlAlias("m_LocalScale")]
+		public Vector3 localScale { get; set; }
+
+		// public Matrix4x4 localToWorldMatrix { get; }
+		// public Vector3 lossyScale { get; }
+		// public Transform parent { get; set; }
+		// public Vector3 position { get; set; }
+		// public Vector3 right { get; set; }
+		// public Transform root { get; }
+		// public Quaternion rotation { get; set; }
+		// public Vector3 up { get; set; }
+		// public Matrix4x4 worldToLocalMatrix { get; }
+	}
 }
