@@ -175,7 +175,7 @@ namespace Disunity.UnityEngine
 		ExponentialSquared
 	}
 
-	public class RenderSettings
+	public class RenderSettings: Object
 	{
 		[YamlAlias("m_AmbientLight")]
 		public /* static */ Color ambientLight { get; set; }
