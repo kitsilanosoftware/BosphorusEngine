@@ -1,7 +1,7 @@
 ﻿using System;
 using YamlDotNet.Serialization;
 
-namespace Disunity.UnityEngine
+namespace UnityEngine
 {
 	[Serializable]
 	[Flags]
