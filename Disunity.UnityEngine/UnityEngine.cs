@@ -3,6 +3,12 @@ using YamlDotNet.Serialization;
 
 namespace UnityEngine
 {
+	public enum ForceMode2D
+	{
+		Force,
+		Impulse
+	}
+
 	[Serializable]
 	[Flags]
 	public enum HideFlags
@@ -15,10 +21,60 @@ namespace UnityEngine
 		HideAndDontSave
 	}
 
+	public enum KeyCode
+	{
+		P
+	}
+
+	public class HideInInspector : System.Attribute
+	{
+	}
+
+	public class Application
+	{
+		public static int loadedLevel;
+		
+		public static void LoadLevel(int index)
+		{
+		}
+	}
+
+	public class Animator : Behaviour
+	{
+		public void SetFloat(string name, float value)
+		{
+		}
+		
+		public void SetTrigger(string name)
+		{
+		}
+	}
+
+	public class AudioClip : Object
+	{
+	}
+
+	public class Collider2D : Behaviour
+	{
+		public bool isTrigger;
+	}
+
+	public class Collision2D
+	{
+		public GameObject gameObject;
+		public Transform transform;
+	}
+
 	public class Object
 	{
-		// public static void Destroy (Object obj);
-		// public static void Destroy (Object obj, float t);
+		public static void Destroy(Object obj)
+		{
+		}
+
+		public static void Destroy(Object obj, float t)
+		{
+		}
+
 		// public static void DestroyImmediate (Object obj);
 		// public static void DestroyImmediate (Object obj, bool allowDestroyingAssets);
 		// public static void DestroyObject (Object obj);
@@ -32,7 +88,10 @@ namespace UnityEngine
 		// public static Object[] FindObjectsOfTypeIncludingAssets (Type type);
 		// public static Object[] FindSceneObjectsOfType (Type type);
 		// public static Object Instantiate (Object original);
-		// public static Object Instantiate (Object original, Vector3 position, Quaternion rotation);
+		public static Object Instantiate(Object original, Vector3 position, Quaternion rotation)
+		{
+			return null;
+		}
 		// public override bool Equals (object o);
 		// public override int GetHashCode ();
 		// public int GetInstanceID ();
@@ -49,7 +108,15 @@ namespace UnityEngine
 		public string name { get; set; }
 	}
 
-	public class Material: Object
+	public class GUIElement : Behaviour
+	{
+	}
+
+	public class GUITexture : GUIElement
+	{
+	}
+	
+	public class Material : Object
 	{
 		// public Material (string contents);
 		// public Material (Shader shader);
@@ -95,7 +162,7 @@ namespace UnityEngine
 		// public void SetVector (int nameID, Vector4 vector);
 		// public void SetVector (string propertyName, Vector4 vector);
 
-		// public Color color { get; set; }
+		public Color color { get; set; }
 		// public Texture mainTexture { get; set; }
 		// public Vector2 mainTextureOffset { get; set; }
 		// public Vector2 mainTextureScale { get; set; }
@@ -103,6 +170,29 @@ namespace UnityEngine
 		// public int renderQueue { get; set; }
 		// public Shader shader { get; set; }
 		// public string [] shaderKeywords { get; set; }
+	}
+
+	public class Rigidbody2D : Component
+	{
+		public bool fixedAngle;
+		public Vector2 velocity;
+		
+		public void AddForce(Vector2 force, ForceMode2D mode = ForceMode2D.Force)
+		{
+		}
+		
+		public void AddTorque(float torque)
+		{
+		}
+	}
+
+	public class Sprite : Object
+	{
+	}
+
+	public class SpriteRenderer : Renderer
+	{
+		public Sprite sprite;
 	}
 
 	public struct Color
@@ -123,7 +213,11 @@ namespace UnityEngine
 			this.a = 1.0f;
 		}
 
-		// public static Color Lerp (Color a, Color b, float t);
+		public static Color Lerp(Color a, Color b, float t)
+		{
+			return red;
+		}
+
 		// public override bool Equals (object other);
 		// public override int GetHashCode ();
 
@@ -150,10 +244,10 @@ namespace UnityEngine
 		// public static Color clear { get; }
 		// public static Color cyan { get; }
 		// public static Color gray { get; }
-		// public static Color green { get; }
+		public static Color green { get; set; }
 		// public static Color grey { get; }
 		// public static Color magenta { get; }
-		// public static Color red { get; }
+		public static Color red { get; set; }
 		// public static Color white { get; }
 		// public static Color yellow { get; }
 		// public Color gamma { get; }
@@ -249,18 +343,34 @@ namespace UnityEngine
 		// public static LightProbes lightProbes { get; set; }
 	}
 
-	public sealed class GameObject: Object
+	public class GUIText : GUIElement
+	{
+		public string text;
+	}
+
+	public sealed class GameObject : Object
 	{
 		// public GameObject (string name);
 		// public GameObject ();
 		// public GameObject (string name, params Type [] components);
 
 		// public static GameObject CreatePrimitive (PrimitiveType type);
-		// public static GameObject Find (string name);
+		public static GameObject Find(string name)
+		{
+			return null;
+		}
 		// public static GameObject[] FindGameObjectsWithTag (string tag);
-		// public static GameObject FindGameObjectWithTag (string tag);
+		public static GameObject FindGameObjectWithTag(string tag)
+		{
+			return null;
+		}
 		// public static GameObject FindWithTag (string tag);
-		// public T AddComponent<T> () where T : Component;
+
+		public T AddComponent<T>() where T : Component
+		{
+			return default(T);
+		}
+
 		// public Component AddComponent (string className);
 		// public Component AddComponent (Type componentType);
 		// public void BroadcastMessage (string methodName);
@@ -268,7 +378,11 @@ namespace UnityEngine
 		// public void BroadcastMessage (string methodName, object parameter, SendMessageOptions options);
 		// public void BroadcastMessage (string methodName, SendMessageOptions options);
 		// public bool CompareTag (string tag);
-		// public T GetComponent<T> () where T : Component;
+		public T GetComponent<T>() where T : Component
+		{
+			return default(T);
+		}
+
 		// public Component GetComponent (string type);
 		// public Component GetComponent (Type type);
 		// public T GetComponentInChildren<T> () where T : Component;
@@ -295,12 +409,21 @@ namespace UnityEngine
 		// public void SendMessageUpwards (string methodName, object value);
 		// public void SendMessageUpwards (string methodName, object value, SendMessageOptions options);
 		// public void SendMessageUpwards (string methodName, SendMessageOptions options);
-		// public void SetActive (bool value);
+		public void SetActive(bool value)
+		{
+			active = value;
+		}
 		// public void SetActiveRecursively (bool state);
 		// public void StopAnimation ();
 
+		public static implicit operator bool(GameObject obj)
+		{
+			return false;
+		}
+
 		[YamlAlias("m_IsActive")]
 		public bool active { get; set; }
+		public bool activeSelf { get; set; } // TODO - What is correct here?  active or activeSelf?
 
 		// public bool activeInHierarchy { get; }
 		// public bool activeSelf { get; }
@@ -312,8 +435,8 @@ namespace UnityEngine
 		// public ConstantForce constantForce { get; }
 		// public GameObject gameObject { get; }
 		// public GUIElement guiElement { get; }
-		// public GUIText guiText { get; }
-		// public GUITexture guiTexture { get; }
+		public GUIText guiText;
+		public GUITexture guiTexture;
 		// public HingeJoint hingeJoint { get; }
 
 		// Not a direct mapping.
@@ -334,7 +457,21 @@ namespace UnityEngine
 		[YamlAlias("m_TagString")]
 		public string tag { get; set; }
 
-		// public Transform transform { get; }
+		public Transform transform;
+	}
+
+	public class AudioSource : Behaviour
+	{
+		public AudioClip clip;
+		public bool isPlaying;
+		
+		public static void PlayClipAtPoint(AudioClip clip, Vector3 position, float volume = 1.0f)
+		{
+		}
+		
+		public void Play(ulong delay = 0)
+		{
+		}
 	}
 
 	public class Component: Object
@@ -347,13 +484,35 @@ namespace UnityEngine
 		// public void BroadcastMessage (string methodName, SendMessageOptions options);
 		// public bool CompareTag (string tag);
 		// public T GetComponent<T> () where T : Component;
+
+
+
+
 		// public Component GetComponent (string type);
 		// public Component GetComponent (Type type);
-		// public T GetComponentInChildren<T> () where T : Component;
+
+		public T GetComponent<T>()
+		{
+			return default(T);
+		}
+
+		public T[] GetComponentsInChildren<T>() where T : Component
+		{
+			return default(T[]);
+		}
+
 		// public Component GetComponentInChildren (Type t);
-		// public T GetComponentInParent<T> () where T : Component;
+		public T GetComponentInChildren<T>() where T : Component
+		{
+			return default(T);
+		}
+		
 		// public Component GetComponentInParent (Type t);
-		// public T[] GetComponents<T> () where T : Component;
+		public T[] GetComponents<T>() where T : Component
+		{
+			return default(T[]);
+		}
+
 		// public Component[] GetComponents (Type type);
 		// public T[] GetComponentsInChildren<T> () where T : Component;
 		// public T[] GetComponentsInChildren<T> (bool includeInactive) where T : Component;
@@ -375,27 +534,27 @@ namespace UnityEngine
 		// public bool active { get; set; }
 
 		// public Animation animation { get; }
-		// public AudioSource audio { get; }
+		public AudioSource audio { get; set; }
 		// public Camera camera { get; }
 		// public Collider collider { get; }
 		// public Collider2D collider2D { get; }
 		// public ConstantForce constantForce { get; }
-		// public GameObject gameObject { get; }
+		public GameObject gameObject { get; set; }
 		// public GUIElement guiElement { get; }
-		// public GUIText guiText { get; }
+		public GUIText guiText { get; set; }
 		// public GUITexture guiTexture { get; }
 		// public HingeJoint hingeJoint { get; }
 		// public Light light { get; }
 		// public NetworkView networkView { get; }
 		// public ParticleEmitter particleEmitter { get; }
-		// public ParticleSystem particleSystem { get; }
-		// public Renderer renderer { get; }
+		public ParticleSystem particleSystem { get; set; }
+		public Renderer renderer { get; set; }
 		// public Rigidbody rigidbody { get; }
-		// public Rigidbody2D rigidbody2D { get; }
+		public Rigidbody2D rigidbody2D { get; set; }
 
-		// public string tag { get; set; }
+		public string tag { get; set; }
 
-		// public Transform transform { get; }
+		public Transform transform { get; set; }
 	}
 
 	public struct Vector3
@@ -412,6 +571,11 @@ namespace UnityEngine
 			this.x = x;
 			this.y = y;
 			this.z = 0;
+		}
+
+		public static Vector3 Lerp(Vector3 from, Vector3 to, float t)
+		{
+			return from;
 		}
 
 		// public static float Angle (Vector3 from, Vector3 to);
@@ -446,10 +610,27 @@ namespace UnityEngine
 		// public override string ToString ();
 		// public string ToString (string format);
 
-		// public static Vector3 operator + (Vector3 a, Vector3 b);
-		// public static Vector3 operator - (Vector3 a, Vector3 b);
+		public static implicit operator Vector2(Vector3 vector)
+		{
+			return default(Vector2);
+		}
+
+		public static Vector3 operator+(Vector3 a, Vector3 b)
+		{
+			return a;
+		}
+		
+		public static Vector3 operator-(Vector3 a, Vector3 b)
+		{
+			return a;
+		}
+
 		// public static Vector3 operator - (Vector3 a);
-		// public static Vector3 operator * (Vector3 a, float d);
+		public static Vector3 operator*(Vector3 a, float d)
+		{
+			return a;
+		}
+		
 		// public static Vector3 operator * (float d, Vector3 a);
 		// public static Vector3 operator / (Vector3 a, float d);
 		// public static bool operator == (Vector3 lhs, Vector3 rhs);
@@ -476,9 +657,8 @@ namespace UnityEngine
 		// public static Vector3 right {
 		//	get;
 		// }
-		// public static Vector3 up {
-		//	get;
-		// }
+		public static Vector3 up;
+
 		// public static Vector3 zero {
 		//	get;
 		// }
@@ -489,9 +669,7 @@ namespace UnityEngine
 		// public float magnitude {
 		//	get;
 		// }
-		// public Vector3 normalized {
-		//	get;
-		// }
+		public Vector3 normalized { get { return this; } }
 		// public float sqrMagnitude {
 		//	get;
 		// }
@@ -518,8 +696,17 @@ namespace UnityEngine
 		// public static Quaternion AngleAxis (float angle, Vector3 axis);
 		// public static Quaternion AxisAngle (Vector3 axis, float angle);
 		// public static float Dot (Quaternion a, Quaternion b);
-		// public static Quaternion Euler (float x, float y, float z);
-		// public static Quaternion Euler (Vector3 euler);
+
+		public static Quaternion Euler(float x, float y, float z)
+		{
+			return identity;
+		}
+		
+		public static Quaternion Euler(Vector3 euler)
+		{
+			return identity;
+		}
+
 		// public static Quaternion EulerAngles (float x, float y, float z);
 		// public static Quaternion EulerAngles (Vector3 euler);
 		// public static Quaternion EulerRotation (float x, float y, float z);
@@ -555,6 +742,8 @@ namespace UnityEngine
 		// public static bool operator == (Quaternion lhs, Quaternion rhs);
 		// public static bool operator != (Quaternion lhs, Quaternion rhs);
 
+		public static Quaternion identity = new Quaternion();
+
 		// public static Quaternion identity {
 		//	get;
 		// }
@@ -576,11 +765,38 @@ namespace UnityEngine
 		public float w;
 	}
 
-	public sealed class Transform: Component
+	public class Random
+	{
+		public static int seed;
+		
+		public static float Range(float min, float max)
+		{
+			return min;
+		}
+		
+		public static int Range(int min, int max)
+		{
+			return min;
+		}
+	}
+
+	public class Time
+	{
+		public static float deltaTime;
+		public static float time;
+		public static float timeScale;
+	}
+
+	public sealed class Transform : Component
 		// System.Collections.IEnumerable
 	{
 		// public void DetachChildren ();
-		// public Transform Find (string name);
+
+		public Transform Find(string name)
+		{
+			return this;
+		}
+
 		// public Transform FindChild (string name);
 		// public Transform GetChild (int index);
 		// public int GetChildCount ();
@@ -635,14 +851,15 @@ namespace UnityEngine
 
 		// public Matrix4x4 localToWorldMatrix { get; }
 		// public Vector3 lossyScale { get; }
-		// public Transform parent { get; set; }
-		// public Vector3 position { get; set; }
+		public Transform parent { get; set; }
+		public Vector3 position { get; set; }
 		// public Vector3 right { get; set; }
-		// public Transform root { get; }
-		// public Quaternion rotation { get; set; }
+		public Transform root;
+		public Quaternion rotation { get; set; }
 		// public Vector3 up { get; set; }
 		// public Matrix4x4 worldToLocalMatrix { get; }
 	}
+
 
 	public struct Vector4
 	{
@@ -740,7 +957,7 @@ namespace UnityEngine
 		// public Transform lightProbeAnchor { get; set; }
 
 		// public Matrix4x4 localToWorldMatrix { get; }
-		// public Material material { get; set; }
+		public Material material { get; set; }
 
 		// TODO: Exception, Key name fileID does not match Material.
 		// [YamlAlias("m_Materials")]
@@ -755,7 +972,7 @@ namespace UnityEngine
 		[YamlAlias("m_SortingLayerID")]
 		public int sortingLayerID { get; set; }
 
-		// public string sortingLayerName { get; set; }
+		public string sortingLayerName { get; set; }
 
 		[YamlAlias("m_SortingOrder")]
 		public int sortingOrder { get; set; }
@@ -803,7 +1020,8 @@ namespace UnityEngine
 		public float velocityScale { get; set; }
 	}
 
-	public sealed class ParticleSystem: Component {
+	public sealed class ParticleSystem : Component
+	{
 
 		// public ParticleSystem ();
 
@@ -818,7 +1036,9 @@ namespace UnityEngine
 		// public bool IsAlive (bool withChildren);
 		// public void Pause ();
 		// public void Pause (bool withChildren);
-		// public void Play ();
+		public void Play(bool withChildren = true)
+		{
+		}
 		// public void Play (bool withChildren);
 		// public void SetParticles (Particle[] particles, int size);
 		// public void Simulate (float t);
@@ -874,9 +1094,31 @@ namespace UnityEngine
 		public bool enabled { get; set; }
 	}
 
-	public struct Vector2 {
+	public class Input
+	{
+		public static float GetAxis(string axisName)
+		{
+			return 0.0f;
+		}
+		
+		public static bool GetButtonDown(string buttonName)
+		{
+			return false;
+		}
+		
+		public static bool GetKeyUp(KeyCode key)
+		{
+			return false;
+		}
+	}
 
-		// public Vector2 (float x, float y);
+	public struct Vector2
+	{
+		public Vector2(float x, float y)
+		{
+			this.x = x;
+			this.y = y;
+		}
 
 		// public static float Angle (Vector2 from, Vector2 to);
 		// public static Vector2 ClampMagnitude (Vector2 vector, float maxLength);
@@ -900,7 +1142,12 @@ namespace UnityEngine
 		// public static Vector2 operator + (Vector2 a, Vector2 b);
 		// public static Vector2 operator - (Vector2 a, Vector2 b);
 		// public static Vector2 operator - (Vector2 a);
-		// public static Vector2 operator * (Vector2 a, float d);
+
+		public static Vector2 operator*(Vector2 a, float d)
+		{
+			return a;
+		}
+
 		// public static Vector2 operator * (float d, Vector2 a);
 		// public static Vector2 operator / (Vector2 a, float d);
 		// public static bool operator == (Vector2 lhs, Vector2 rhs);
@@ -911,9 +1158,8 @@ namespace UnityEngine
 		// public static Vector2 one {
 		//	get;
 		// }
-		// public static Vector2 right {
-		//	get;
-		// }
+		public static Vector2 right;
+
 		// public static Vector2 up {
 		//	get;
 		// }
@@ -1105,6 +1351,45 @@ namespace UnityEngine
 		public WrapMode wrapMode { get; set; }
 	}
 
+	public class Coroutine
+	{
+	}
+
+	public class WaitForSeconds
+	{
+		public WaitForSeconds(float seconds)
+		{
+		}
+	}
+
+	public class RaycastHit2D
+	{
+		public static implicit operator bool(RaycastHit2D raycast)
+		{
+			return false;
+		}
+	}
+
+	public class Physics2D
+	{
+		public const int DefaultRaycastLayers = 0;
+		
+		public static RaycastHit2D Linecast(Vector2 start, Vector2 end, int layerMask = DefaultRaycastLayers, float minDepth = -Mathf.Infinity, float maxDepth = Mathf.Infinity)
+		{
+			return null;
+		}
+		
+		public static Collider2D[] OverlapCircleAll(Vector2 point, float radius, int layerMask = DefaultRaycastLayers, float minDepth = -Mathf.Infinity, float maxDepth = Mathf.Infinity)
+		{
+			return null;
+		}
+		
+		public static Collider2D[] OverlapPointAll(Vector2 point, int layerMask = DefaultRaycastLayers, float minDepth = -Mathf.Infinity, float maxDepth = Mathf.Infinity)
+		{
+			return null;
+		}
+	}
+
 	public class MonoBehaviour: Behaviour
 	{
 		// public MonoBehaviour ();
@@ -1113,12 +1398,28 @@ namespace UnityEngine
 		// public void CancelInvoke ();
 		// public void CancelInvoke (string methodName);
 		// public void Invoke (string methodName, float time);
-		// public void InvokeRepeating (string methodName, float time, float repeatRate);
+		public void InvokeRepeating(string methodName, float time, float repeatRate)
+		{
+		}
+
 		// public bool IsInvoking ();
 		// public bool IsInvoking (string methodName);
-		// public Coroutine StartCoroutine (System.Collections.IEnumerator routine);
-		// public Coroutine StartCoroutine (string methodName);
-		// public Coroutine StartCoroutine (string methodName, object value);
+
+		public Coroutine StartCoroutine(System.Collections.IEnumerator routine)
+		{
+			return null;
+		}
+
+		public Coroutine StartCoroutine(string methodName)
+		{
+			return null;
+		}
+
+		public Coroutine StartCoroutine(string methodName, object value)
+		{
+			return null;
+		}
+		
 		// public Coroutine StartCoroutine_Auto (System.Collections.IEnumerator routine);
 		// public void StopAllCoroutines ();
 		// public void StopCoroutine (System.Collections.IEnumerator routine);
@@ -1143,6 +1444,39 @@ namespace UnityEngine
 		SolidColor = 2,
 		Depth = 3,
 		Nothing = 4
+	}
+
+	public class LayerMask
+	{
+		public static int NameToLayer(string layerName)
+		{
+			return 0;
+		}
+	}
+
+	public class Mathf
+	{
+		public const float Infinity = 0.0f;
+		
+		public static float Abs(float f)
+		{
+			return f;
+		}
+		
+		public static float Clamp(float value, float min, float max)
+		{
+			return value;
+		}
+		
+		public static float Lerp(float from, float to, float t)
+		{
+			return from;
+		}
+		
+		public static float Sign(float f)
+		{
+			return f;
+		}
 	}
 
 	public struct Rect
@@ -1322,6 +1656,8 @@ namespace UnityEngine
 
 		// public Vector3 velocity { get; }
 		// public Matrix4x4 worldToCameraMatrix { get; set; }
+
+		public static Camera main;
 	}
 
 	public sealed class AudioListener: Behaviour
