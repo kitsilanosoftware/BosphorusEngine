@@ -3,926 +3,16 @@ using YamlDotNet.Serialization;
 
 namespace UnityEngine
 {
-	[Serializable]
-	[Flags] // TODO - These will need explicit values assigned to be correct, probably 1, 2, 4, 8, etc.
-	// See http://stackoverflow.com/questions/8447/what-does-the-flags-enum-attribute-mean-in-c.
-	public enum HideFlags
-	{
-		None,
-		HideInHierarchy,
-		HideInInspector,
-		DontSave,
-		NotEditable,
-		HideAndDontSave
-	}
 
-	public enum KeyCode
-	{
-		P
-	}
 
-	public class HideInInspector : System.Attribute
-	{
-	}
 
-	public class Application
-	{
-		public static int loadedLevel;
-		
-		public static void LoadLevel(int index)
-		{
-		}
-	}
 
-	public class Animator : Behaviour
-	{
-		public void SetFloat(string name, float value)
-		{
-		}
-		
-		public void SetTrigger(string name)
-		{
-		}
-	}
 
-	public class AudioClip : Object
-	{
-	}
 
-	public class Collider2D : Behaviour
-	{
-		public bool isTrigger;
-	}
 
-	public class Collision2D
-	{
-		public GameObject gameObject;
-		public Transform transform;
-	}
 
-	public class Object
-	{
-		public static void Destroy(Object obj)
-		{
-		}
 
-		public static void Destroy(Object obj, float t)
-		{
-		}
 
-		// public static void DestroyImmediate (Object obj);
-		// public static void DestroyImmediate (Object obj, bool allowDestroyingAssets);
-		// public static void DestroyObject (Object obj);
-		// public static void DestroyObject (Object obj, float t);
-		// public static void DontDestroyOnLoad (Object target);
-		// public static T FindObjectOfType<T> () where T : Object;
-		// public static Object FindObjectOfType (Type type);
-		// public static T[] FindObjectsOfType<T> () where T : Object;
-		// public static Object[] FindObjectsOfType (Type type);
-		// public static Object[] FindObjectsOfTypeAll (Type type);
-		// public static Object[] FindObjectsOfTypeIncludingAssets (Type type);
-		// public static Object[] FindSceneObjectsOfType (Type type);
-		// public static Object Instantiate (Object original);
-		public static Object Instantiate(Object original, Vector3 position, Quaternion rotation)
-		{
-			return null;
-		}
-		// public override bool Equals (object o);
-		// public override int GetHashCode ();
-		// public int GetInstanceID ();
-		// public override string ToString ();
-
-		// public static implicit operator bool (Object exists);
-		// public static bool operator == (Object x, Object y);
-		// public static bool operator != (Object x, Object y);
-
-		[YamlAlias("m_ObjectHideFlags")]
-		public HideFlags hideFlags { get; set; }
-
-		[YamlAlias("m_Name")]
-		public string name { get; set; }
-	}
-
-	public class GUIElement : Behaviour
-	{
-	}
-
-	public class GUITexture : GUIElement
-	{
-	}
-	
-	public class Material : Object
-	{
-		// public Material (string contents);
-		// public Material (Shader shader);
-		// public Material (Material source);
-
-		// public static Material Create (string scriptContents);
-		// public void CopyPropertiesFromMaterial (Material mat);
-		// public void DisableKeyword (string keyword);
-		// public void EnableKeyword (string keyword);
-		// public Color GetColor (int nameID);
-		// public Color GetColor (string propertyName);
-		// public float GetFloat (int nameID);
-		// public float GetFloat (string propertyName);
-		// public int GetInt (int nameID);
-		// public int GetInt (string propertyName);
-		// public Matrix4x4 GetMatrix (int nameID);
-		// public Matrix4x4 GetMatrix (string propertyName);
-		// public string GetTag (string tag, bool searchFallbacks);
-		// public string GetTag (string tag, bool searchFallbacks, string defaultValue);
-		// public Texture GetTexture (int nameID);
-		// public Texture GetTexture (string propertyName);
-		// public Vector2 GetTextureOffset (string propertyName);
-		// public Vector2 GetTextureScale (string propertyName);
-		// public Vector4 GetVector (int nameID);
-		// public Vector4 GetVector (string propertyName);
-		// public bool HasProperty (int nameID);
-		// public bool HasProperty (string propertyName);
-		// public void Lerp (Material start, Material end, float t);
-		// public void SetBuffer (string propertyName, ComputeBuffer buffer);
-		// public void SetColor (int nameID, Color color);
-		// public void SetColor (string propertyName, Color color);
-		// public void SetFloat (int nameID, float value);
-		// public void SetFloat (string propertyName, float value);
-		// public void SetInt (int nameID, int value);
-		// public void SetInt (string propertyName, int value);
-		// public void SetMatrix (int nameID, Matrix4x4 matrix);
-		// public void SetMatrix (string propertyName, Matrix4x4 matrix);
-		// public bool SetPass (int pass);
-		// public void SetTexture (int nameID, Texture texture);
-		// public void SetTexture (string propertyName, Texture texture);
-		// public void SetTextureOffset (string propertyName, Vector2 offset);
-		// public void SetTextureScale (string propertyName, Vector2 scale);
-		// public void SetVector (int nameID, Vector4 vector);
-		// public void SetVector (string propertyName, Vector4 vector);
-
-		public Color color { get; set; }
-		// public Texture mainTexture { get; set; }
-		// public Vector2 mainTextureOffset { get; set; }
-		// public Vector2 mainTextureScale { get; set; }
-		// public int passCount { get; private set; }
-		// public int renderQueue { get; set; }
-		// public Shader shader { get; set; }
-		// public string [] shaderKeywords { get; set; }
-	}
-
-	public class Rigidbody2D : Component
-	{
-		public bool fixedAngle;
-		public Vector2 velocity;
-		
-		public void AddForce(Vector2 force, ForceMode2D mode = ForceMode2D.Force)
-		{
-		}
-		
-		public void AddTorque(float torque)
-		{
-		}
-	}
-
-	public class Sprite : Object
-	{
-	}
-
-	public class SpriteRenderer : Renderer
-	{
-		public Sprite sprite;
-	}
-
-	public struct Color
-	{
-		public Color (float r, float g, float b, float a)
-		{
-			this.r = r;
-			this.g = g;
-			this.b = b;
-			this.a = a;
-		}
-
-		public Color (float r, float g, float b)
-		{
-			this.r = r;
-			this.g = g;
-			this.b = b;
-			this.a = 1.0f;
-		}
-
-		public static Color Lerp(Color a, Color b, float t)
-		{
-			return red;
-		}
-
-		// public override bool Equals (object other);
-		// public override int GetHashCode ();
-
-		public override string ToString ()
-		{
-			return String.Format ("RGBA({0}, {1}, {2}, {3})", r, g, b, a);
-		}
-
-		// public string ToString (string format);
-
-		// public static Color operator + (Color a, Color b);
-		// public static Color operator - (Color a, Color b);
-		// public static Color operator * (Color a, Color b);
-		// public static Color operator * (Color a, float b);
-		// public static Color operator * (float b, Color a);
-		// public static Color operator / (Color a, float b);
-		// public static bool operator == (Color lhs, Color rhs);
-		// public static bool operator != (Color lhs, Color rhs);
-		// public static implicit operator Vector4 (Color c);
-		// public static implicit operator Color (Vector4 v);
-
-		// public static Color black { get; }
-		// public static Color blue { get; }
-		// public static Color clear { get; }
-		// public static Color cyan { get; }
-		// public static Color gray { get; }
-		public static Color green { get; set; }
-		// public static Color grey { get; }
-		// public static Color magenta { get; }
-		public static Color red { get; set; }
-		// public static Color white { get; }
-		// public static Color yellow { get; }
-		// public Color gamma { get; }
-		// public float grayscale { get; }
-		// public float this [int index] { get; set; }
-		// public Color linear { get; }
-
-		// YAML: Direct mapping.
-		public float r;
-		public float g;
-		public float b;
-		public float a;
-	}
-
-	public enum FogMode
-	{
-		Linear = 1,
-		Exponential,
-		ExponentialSquared
-	}
-
-	public class RenderSettings: Object
-	{
-		[YamlAlias("m_AmbientLight")]
-		public /* static */ Color ambientLight { get; set; }
-
-		[YamlAlias("m_FlareFadeSpeed")]
-		public /* static */ float flareFadeSpeed { get; set; }
-
-		[YamlAlias("m_FlareStrength")]
-		public /* static */ float flareStrength { get; set; }
-
-		[YamlAlias("m_Fog")]
-		public /* static */ bool fog { get; set; }
-
-		[YamlAlias("m_FogColor")]
-		public /* static */ Color fogColor { get; set; }
-
-		[YamlAlias("m_FogDensity")]
-		public /* static */ float fogDensity { get; set; }
-
-		[YamlAlias("m_LinearFogEnd")]
-		public /* static */ float fogEndDistance { get; set; }
-
-		[YamlAlias("m_FogMode")]
-		public /* static */ FogMode fogMode { get; set; }
-
-		[YamlAlias("m_LinearFogStart")]
-		public /* static */ float fogStartDistance { get; set; }
-
-		[YamlAlias("m_HaloStrength")]
-		public /* static */ float haloStrength { get; set; }
-
-		// TODO: fileID mapping.
-		// [YamlAlias("m_SkyboxMaterial")]
-		// public /* static */ Material skybox { get; set; }
-	}
-
-	[Serializable]
-	public enum ColorSpace
-	{
-		Uninitialized,
-		Gamma,
-		Linear
-	}
-
-	public class LightmapData {
-		// public LightmapData ();
-
-		// public Texture2D lightmap { get; set; }
-		// public Texture2D lightmapFar { get; set; }
-		// public Texture2D lightmapNear { get; set; }
-	}
-
-	[Serializable]
-	public enum LightmapsMode {
-		Single,
-		Dual,
-		Directional
-	}
-
-	public class LightmapSettings: Object
-	{
-		[YamlAlias("m_BakedColorSpace")]
-		public /* static */ ColorSpace bakedColorSpace { get; set; }
-
-		[YamlAlias("m_Lightmaps")]
-		public /* static */ LightmapData[] lightmaps { get; set; }
-
-		[YamlAlias("m_LightmapsMode")]
-		public /* static */ LightmapsMode lightmapsMode { get; set; }
-
-		// public static LightProbes lightProbes { get; set; }
-	}
-
-	public class GUIText : GUIElement
-	{
-		public string text;
-	}
-
-	public sealed class GameObject : Object
-	{
-		// public GameObject (string name);
-		// public GameObject ();
-		// public GameObject (string name, params Type [] components);
-
-		// public static GameObject CreatePrimitive (PrimitiveType type);
-		public static GameObject Find(string name)
-		{
-			return null;
-		}
-		// public static GameObject[] FindGameObjectsWithTag (string tag);
-		public static GameObject FindGameObjectWithTag(string tag)
-		{
-			return null;
-		}
-		// public static GameObject FindWithTag (string tag);
-
-		public T AddComponent<T>() where T : Component
-		{
-			return default(T);
-		}
-
-		// public Component AddComponent (string className);
-		// public Component AddComponent (Type componentType);
-		// public void BroadcastMessage (string methodName);
-		// public void BroadcastMessage (string methodName, object parameter);
-		// public void BroadcastMessage (string methodName, object parameter, SendMessageOptions options);
-		// public void BroadcastMessage (string methodName, SendMessageOptions options);
-		// public bool CompareTag (string tag);
-		public T GetComponent<T>() where T : Component
-		{
-			return default(T);
-		}
-
-		// public Component GetComponent (string type);
-		// public Component GetComponent (Type type);
-		// public T GetComponentInChildren<T> () where T : Component;
-		// public Component GetComponentInChildren (Type type);
-		// public T GetComponentInParent<T> () where T : Component;
-		// public Component GetComponentInParent (Type type);
-		// public T[] GetComponents<T> () where T : Component;
-		// public Component[] GetComponents (Type type);
-		// public T[] GetComponentsInChildren<T> () where T : Component;
-		// public T[] GetComponentsInChildren<T> (bool includeInactive) where T : Component;
-		// public Component[] GetComponentsInChildren (Type type);
-		// public Component[] GetComponentsInChildren (Type type, bool includeInactive);
-		// public T[] GetComponentsInParent<T> () where T : Component;
-		// public T[] GetComponentsInParent<T> (bool includeInactive) where T : Component;
-		// public Component[] GetComponentsInParent (Type type);
-		// public Component[] GetComponentsInParent (Type type, bool includeInactive);
-		// public void PlayAnimation (AnimationClip animation);
-		// public void SampleAnimation (AnimationClip animation, float time);
-		// public void SendMessage (string methodName);
-		// public void SendMessage (string methodName, object value);
-		// public void SendMessage (string methodName, object value, SendMessageOptions options);
-		// public void SendMessage (string methodName, SendMessageOptions options);
-		// public void SendMessageUpwards (string methodName);
-		// public void SendMessageUpwards (string methodName, object value);
-		// public void SendMessageUpwards (string methodName, object value, SendMessageOptions options);
-		// public void SendMessageUpwards (string methodName, SendMessageOptions options);
-		public void SetActive(bool value)
-		{
-			active = value;
-		}
-		// public void SetActiveRecursively (bool state);
-		// public void StopAnimation ();
-
-		public static implicit operator bool(GameObject obj)
-		{
-			return false;
-		}
-
-		[YamlAlias("m_IsActive")]
-		public bool active { get; set; }
-		public bool activeSelf { get; set; } // TODO - What is correct here?  active or activeSelf?
-
-		// public bool activeInHierarchy { get; }
-		// public bool activeSelf { get; }
-		// public Animation animation { get; }
-		// public AudioSource audio { get; }
-		// public Camera camera { get; }
-		// public Collider collider { get; }
-		// public Collider2D collider2D { get; }
-		// public ConstantForce constantForce { get; }
-		// public GameObject gameObject { get; }
-		// public GUIElement guiElement { get; }
-		public GUIText guiText;
-		public GUITexture guiTexture;
-		// public HingeJoint hingeJoint { get; }
-
-		// Not a direct mapping.
-		// [YamlAlias("m_StaticEditorFlags")]
-		// public bool isStatic { get; set; }
-
-		[YamlAlias("m_Layer")]
-		public int layer { get; set; }
-
-		// public Light light { get; }
-		// public NetworkView networkView { get; }
-		// public ParticleEmitter particleEmitter { get; }
-		// public ParticleSystem particleSystem { get; }
-		// public Renderer renderer { get; }
-		// public Rigidbody rigidbody { get; }
-		// public Rigidbody2D rigidbody2D { get; }
-
-		[YamlAlias("m_TagString")]
-		public string tag { get; set; }
-
-		public Transform transform;
-	}
-
-	public class AudioSource : Behaviour
-	{
-		public AudioClip clip;
-		public bool isPlaying;
-		
-		public static void PlayClipAtPoint(AudioClip clip, Vector3 position, float volume = 1.0f)
-		{
-		}
-		
-		public void Play(ulong delay = 0)
-		{
-		}
-	}
-
-	public class Component: Object
-	{
-		// public Component ();
-
-		// public void BroadcastMessage (string methodName);
-		// public void BroadcastMessage (string methodName, object parameter);
-		// public void BroadcastMessage (string methodName, object parameter, SendMessageOptions options);
-		// public void BroadcastMessage (string methodName, SendMessageOptions options);
-		// public bool CompareTag (string tag);
-		// public T GetComponent<T> () where T : Component;
-
-
-
-
-		// public Component GetComponent (string type);
-		// public Component GetComponent (Type type);
-
-		public T GetComponent<T>()
-		{
-			return default(T);
-		}
-
-		public T[] GetComponentsInChildren<T>() where T : Component
-		{
-			return default(T[]);
-		}
-
-		// public Component GetComponentInChildren (Type t);
-		public T GetComponentInChildren<T>() where T : Component
-		{
-			return default(T);
-		}
-		
-		// public Component GetComponentInParent (Type t);
-		public T[] GetComponents<T>() where T : Component
-		{
-			return default(T[]);
-		}
-
-		// public Component[] GetComponents (Type type);
-		// public T[] GetComponentsInChildren<T> () where T : Component;
-		// public T[] GetComponentsInChildren<T> (bool includeInactive) where T : Component;
-		// public Component[] GetComponentsInChildren (Type t);
-		// public Component[] GetComponentsInChildren (Type t, bool includeInactive);
-		// public T[] GetComponentsInParent<T> () where T : Component;
-		// public T[] GetComponentsInParent<T> (bool includeInactive) where T : Component;
-		// public Component[] GetComponentsInParent (Type t);
-		// public Component[] GetComponentsInParent (Type t, bool includeInactive);
-		// public void SendMessage (string methodName);
-		// public void SendMessage (string methodName, object value);
-		// public void SendMessage (string methodName, object value, SendMessageOptions options);
-		// public void SendMessage (string methodName, SendMessageOptions options);
-		// public void SendMessageUpwards (string methodName);
-		// public void SendMessageUpwards (string methodName, object value);
-		// public void SendMessageUpwards (string methodName, object value, SendMessageOptions options);
-		// public void SendMessageUpwards (string methodName, SendMessageOptions options);
-
-		// public bool active { get; set; }
-
-		// public Animation animation { get; }
-		public AudioSource audio { get; set; }
-		// public Camera camera { get; }
-		// public Collider collider { get; }
-		// public Collider2D collider2D { get; }
-		// public ConstantForce constantForce { get; }
-		public GameObject gameObject { get; set; }
-		// public GUIElement guiElement { get; }
-		public GUIText guiText { get; set; }
-		// public GUITexture guiTexture { get; }
-		// public HingeJoint hingeJoint { get; }
-		// public Light light { get; }
-		// public NetworkView networkView { get; }
-		// public ParticleEmitter particleEmitter { get; }
-		public ParticleSystem particleSystem { get; set; }
-		public Renderer renderer { get; set; }
-		// public Rigidbody rigidbody { get; }
-		public Rigidbody2D rigidbody2D { get; set; }
-
-		public string tag { get; set; }
-
-		public Transform transform { get; set; }
-	}
-
-	public struct Vector3
-	{
-		public Vector3(float x, float y, float z)
-		{
-			this.x = x;
-			this.y = y;
-			this.z = z;
-		}
-
-		public Vector3(float x, float y)
-		{
-			this.x = x;
-			this.y = y;
-			this.z = 0;
-		}
-
-		public static Vector3 Lerp(Vector3 from, Vector3 to, float t)
-		{
-			return from;
-		}
-
-		// public static float Angle (Vector3 from, Vector3 to);
-		// public static float AngleBetween (Vector3 from, Vector3 to);
-		// public static Vector3 ClampMagnitude (Vector3 vector, float maxLength);
-		// public static Vector3 Cross (Vector3 lhs, Vector3 rhs);
-		// public static float Distance (Vector3 a, Vector3 b);
-		// public static float Dot (Vector3 lhs, Vector3 rhs);
-		// public static Vector3 Exclude (Vector3 excludeThis, Vector3 fromThat);
-		// public static Vector3 Lerp (Vector3 from, Vector3 to, float t);
-		// public static float Magnitude (Vector3 a);
-		// public static Vector3 Max (Vector3 lhs, Vector3 rhs);
-		// public static Vector3 Min (Vector3 lhs, Vector3 rhs);
-		// public static Vector3 MoveTowards (Vector3 current, Vector3 target, float maxDistanceDelta);
-		// public static Vector3 Normalize (Vector3 value);
-		// public static void OrthoNormalize (ref Vector3 normal, ref Vector3 tangent);
-		// public static void OrthoNormalize (ref Vector3 normal, ref Vector3 tangent, ref Vector3 binormal);
-		// public static Vector3 Project (Vector3 vector, Vector3 onNormal);
-		// public static Vector3 Reflect (Vector3 inDirection, Vector3 inNormal);
-		// public static Vector3 RotateTowards (Vector3 current, Vector3 target, float maxRadiansDelta, float maxMagnitudeDelta);
-		// public static Vector3 Scale (Vector3 a, Vector3 b);
-		// public static Vector3 Slerp (Vector3 from, Vector3 to, float t);
-		// public static Vector3 SmoothDamp (Vector3 current, Vector3 target, ref Vector3 currentVelocity, float smoothTime);
-		// public static Vector3 SmoothDamp (Vector3 current, Vector3 target, ref Vector3 currentVelocity, float smoothTime, float maxSpeed);
-		// public static Vector3 SmoothDamp (Vector3 current, Vector3 target, ref Vector3 currentVelocity, float smoothTime, float maxSpeed, float deltaTime);
-		// public static float SqrMagnitude (Vector3 a);
-		// public override bool Equals (object other);
-		// public override int GetHashCode ();
-		// public void Normalize ();
-		// public void Scale (Vector3 scale);
-		// public void Set (float new_x, float new_y, float new_z);
-		// public override string ToString ();
-		// public string ToString (string format);
-
-		public static implicit operator Vector2(Vector3 vector)
-		{
-			return default(Vector2);
-		}
-
-		public static Vector3 operator+(Vector3 a, Vector3 b)
-		{
-			return a;
-		}
-		
-		public static Vector3 operator-(Vector3 a, Vector3 b)
-		{
-			return a;
-		}
-
-		// public static Vector3 operator - (Vector3 a);
-		public static Vector3 operator*(Vector3 a, float d)
-		{
-			return a;
-		}
-		
-		// public static Vector3 operator * (float d, Vector3 a);
-		// public static Vector3 operator / (Vector3 a, float d);
-		// public static bool operator == (Vector3 lhs, Vector3 rhs);
-		// public static bool operator != (Vector3 lhs, Vector3 rhs);
-
-		// public static Vector3 back {
-		//	get;
-		// }
-		// public static Vector3 down {
-		//	get;
-		// }
-		// public static Vector3 forward {
-		//	get;
-		// }
-		// public static Vector3 fwd {
-		//	get;
-		// }
-		// public static Vector3 left {
-		//	get;
-		// }
-		// public static Vector3 one {
-		//	get;
-		// }
-		// public static Vector3 right {
-		//	get;
-		// }
-		public static Vector3 up;
-
-		// public static Vector3 zero {
-		//	get;
-		// }
-		// public float this [int index] {
-		//	get;
-		//	set;
-		// }
-		// public float magnitude {
-		//	get;
-		// }
-		public Vector3 normalized { get { return this; } }
-		// public float sqrMagnitude {
-		//	get;
-		// }
-
-		public const float kEpsilon = 1E-05f;
-
-		// YAML: Direct mapping.
-		public float x;
-		public float y;
-		public float z;
-	}
-
-	public struct Quaternion {
-
-		public Quaternion(float x, float y, float z, float w)
-		{
-			this.x = x;
-			this.y = y;
-			this.z = z;
-			this.w = w;
-		}
-
-		// public static float Angle (Quaternion a, Quaternion b);
-		// public static Quaternion AngleAxis (float angle, Vector3 axis);
-		// public static Quaternion AxisAngle (Vector3 axis, float angle);
-		// public static float Dot (Quaternion a, Quaternion b);
-
-		public static Quaternion Euler(float x, float y, float z)
-		{
-			return identity;
-		}
-		
-		public static Quaternion Euler(Vector3 euler)
-		{
-			return identity;
-		}
-
-		// public static Quaternion EulerAngles (float x, float y, float z);
-		// public static Quaternion EulerAngles (Vector3 euler);
-		// public static Quaternion EulerRotation (float x, float y, float z);
-		// public static Quaternion EulerRotation (Vector3 euler);
-		// public static Quaternion FromToRotation (Vector3 fromDirection, Vector3 toDirection);
-		// public static Quaternion Inverse (Quaternion rotation);
-		// public static Quaternion Lerp (Quaternion from, Quaternion to, float t);
-		// public static Quaternion LookRotation (Vector3 forward);
-		// public static Quaternion LookRotation (Vector3 forward, Vector3 upwards);
-		// public static Quaternion RotateTowards (Quaternion from, Quaternion to, float maxDegreesDelta);
-		// public static Quaternion Slerp (Quaternion from, Quaternion to, float t);
-		// public static Vector3 ToEulerAngles (Quaternion rotation);
-		// public override bool Equals (object other);
-		// public override int GetHashCode ();
-		// public void Set (float new_x, float new_y, float new_z, float new_w);
-		// public void SetAxisAngle (Vector3 axis, float angle);
-		// public void SetEulerAngles (float x, float y, float z);
-		// public void SetEulerAngles (Vector3 euler);
-		// public void SetEulerRotation (float x, float y, float z);
-		// public void SetEulerRotation (Vector3 euler);
-		// public void SetFromToRotation (Vector3 fromDirection, Vector3 toDirection);
-		// public void SetLookRotation (Vector3 view);
-		// public void SetLookRotation (Vector3 view, Vector3 up);
-		// public void ToAngleAxis (out float angle, out Vector3 axis);
-		// public void ToAxisAngle (out Vector3 axis, out float angle);
-		// public Vector3 ToEuler ();
-		// public Vector3 ToEulerAngles ();
-		// public override string ToString ();
-		// public string ToString (string format);
-
-		// public static Quaternion operator * (Quaternion lhs, Quaternion rhs);
-		// public static Vector3 operator * (Quaternion rotation, Vector3 point);
-		// public static bool operator == (Quaternion lhs, Quaternion rhs);
-		// public static bool operator != (Quaternion lhs, Quaternion rhs);
-
-		public static Quaternion identity = new Quaternion();
-
-		// public static Quaternion identity {
-		//	get;
-		// }
-		// public Vector3 eulerAngles {
-		//	get;
-		//	set;
-		// }
-		// public float this [int index] {
-		//	get;
-		//	set;
-		// }
-
-		public const float kEpsilon = 1E-06f;
-
-		// YAML: Direct mapping.
-		public float x;
-		public float y;
-		public float z;
-		public float w;
-	}
-
-	public class Random
-	{
-		public static int seed;
-		
-		public static float Range(float min, float max)
-		{
-			return min;
-		}
-		
-		public static int Range(int min, int max)
-		{
-			return min;
-		}
-	}
-
-	public class Time
-	{
-		public static float deltaTime;
-		public static float time;
-		public static float timeScale;
-	}
-
-	public sealed class Transform : Component
-		// System.Collections.IEnumerable
-	{
-		// public void DetachChildren ();
-
-		public Transform Find(string name)
-		{
-			return this;
-		}
-
-		// public Transform FindChild (string name);
-		// public Transform GetChild (int index);
-		// public int GetChildCount ();
-		// public System.Collections.IEnumerator GetEnumerator ();
-		// public int GetSiblingIndex ();
-		// public Vector3 InverseTransformDirection (float x, float y, float z);
-		// public Vector3 InverseTransformDirection (Vector3 direction);
-		// public Vector3 InverseTransformPoint (float x, float y, float z);
-		// public Vector3 InverseTransformPoint (Vector3 position);
-		// public bool IsChildOf (Transform parent);
-		// public void LookAt (Transform target);
-		// public void LookAt (Transform target, Vector3 worldUp);
-		// public void LookAt (Vector3 worldPosition);
-		// public void LookAt (Vector3 worldPosition, Vector3 worldUp);
-		// public void Rotate (float xAngle, float yAngle, float zAngle);
-		// public void Rotate (float xAngle, float yAngle, float zAngle, Space relativeTo);
-		// public void Rotate (Vector3 eulerAngles);
-		// public void Rotate (Vector3 axis, float angle);
-		// public void Rotate (Vector3 axis, float angle, Space relativeTo);
-		// public void Rotate (Vector3 eulerAngles, Space relativeTo);
-		// public void RotateAround (Vector3 axis, float angle);
-		// public void RotateAround (Vector3 point, Vector3 axis, float angle);
-		// public void RotateAroundLocal (Vector3 axis, float angle);
-		// public void SetAsFirstSibling ();
-		// public void SetAsLastSibling ();
-		// public void SetSiblingIndex (int index);
-		// public Vector3 TransformDirection (float x, float y, float z);
-		// public Vector3 TransformDirection (Vector3 direction);
-		// public Vector3 TransformPoint (float x, float y, float z);
-		// public Vector3 TransformPoint (Vector3 position);
-		// public void Translate (float x, float y, float z);
-		// public void Translate (float x, float y, float z, Space relativeTo);
-		// public void Translate (float x, float y, float z, Transform relativeTo);
-		// public void Translate (Vector3 translation);
-		// public void Translate (Vector3 translation, Space relativeTo);
-		// public void Translate (Vector3 translation, Transform relativeTo);
-
-		// public int childCount { get; }
-		// public Vector3 eulerAngles { get; set; }
-		// public Vector3 forward { get; set; }
-		// public bool hasChanged { get; set; }
-		// public Vector3 localEulerAngles { get; set; }
-
-		[YamlAlias("m_LocalPosition")]
-		public Vector3 localPosition { get; set; }
-
-		[YamlAlias("m_LocalRotation")]
-		public Quaternion localRotation { get; set; }
-
-		[YamlAlias("m_LocalScale")]
-		public Vector3 localScale { get; set; }
-
-		// public Matrix4x4 localToWorldMatrix { get; }
-		// public Vector3 lossyScale { get; }
-		public Transform parent { get; set; }
-		public Vector3 position { get; set; }
-		// public Vector3 right { get; set; }
-		public Transform root;
-		public Quaternion rotation { get; set; }
-		// public Vector3 up { get; set; }
-		// public Matrix4x4 worldToLocalMatrix { get; }
-	}
-
-
-	public struct Vector4
-	{
-		// public Vector4 (float x, float y, float z, float w);
-		// public Vector4 (float x, float y, float z);
-		// public Vector4 (float x, float y);
-
-		// public static float Distance (Vector4 a, Vector4 b);
-		// public static float Dot (Vector4 a, Vector4 b);
-		// public static Vector4 Lerp (Vector4 from, Vector4 to, float t);
-		// public static float Magnitude (Vector4 a);
-		// public static Vector4 Max (Vector4 lhs, Vector4 rhs);
-		// public static Vector4 Min (Vector4 lhs, Vector4 rhs);
-		// public static Vector4 MoveTowards (Vector4 current, Vector4 target, float maxDistanceDelta);
-		// public static Vector4 Normalize (Vector4 a);
-		// public static Vector4 Project (Vector4 a, Vector4 b);
-		// public static Vector4 Scale (Vector4 a, Vector4 b);
-		// public static float SqrMagnitude (Vector4 a);
-		// public override bool Equals (object other);
-		// public override int GetHashCode ();
-		// public void Normalize ();
-		// public void Scale (Vector4 scale);
-		// public void Set (float new_x, float new_y, float new_z, float new_w);
-		// public float SqrMagnitude ();
-		// public override string ToString ();
-		// public string ToString (string format);
-
-		// public static Vector4 operator + (Vector4 a, Vector4 b);
-		// public static Vector4 operator - (Vector4 a, Vector4 b);
-		// public static Vector4 operator - (Vector4 a);
-		// public static Vector4 operator * (Vector4 a, float d);
-		// public static Vector4 operator * (float d, Vector4 a);
-		// public static Vector4 operator / (Vector4 a, float d);
-		// public static bool operator == (Vector4 lhs, Vector4 rhs);
-		// public static bool operator != (Vector4 lhs, Vector4 rhs);
-		// public static implicit operator Vector4 (Vector3 v);
-		// public static implicit operator Vector3 (Vector4 v);
-		// public static implicit operator Vector4 (Vector2 v);
-		// public static implicit operator Vector2 (Vector4 v);
-
-		// public static Vector4 one {
-		//	get;
-		// }
-		// public static Vector4 zero {
-		//	get;
-		// }
-		// public float this [int index] {
-		//	get;
-		//	set;
-		// }
-		// public float magnitude {
-		//	get;
-		// }
-		// public Vector4 normalized {
-		//	get;
-		// }
-		// public float sqrMagnitude {
-		//	get;
-		// }
-
-		public const float kEpsilon = 1E-05f;
-
-		// YAML: Direct mapping.
-		public float x;
-		public float y;
-		public float z;
-		public float w;
-	}
 
 	public class Renderer: Component {
 
@@ -1084,7 +174,8 @@ namespace UnityEngine
 		}
 	}
 
-	public class Behaviour: Component {
+	public class Behaviour: Component
+	{
 		[YamlAlias("m_Enabled")]
 		public bool enabled { get; set; }
 	}
@@ -1183,28 +274,32 @@ namespace UnityEngine
 	}
 
 	[Serializable]
-	public enum LightRenderMode {
+	public enum LightRenderMode
+	{
 		Auto,
 		ForcePixel,
 		ForceVertex
 	}
 
 	[Serializable]
-	public enum LightShadows {
+	public enum LightShadows
+	{
 		None,
 		Hard,
 		Soft
 	}
 
 	[Serializable]
-	public enum LightType {
+	public enum LightType
+	{
 		Spot,
 		Directional,
 		Point,
 		Area
 	}
 
-	public sealed class Light: Behaviour {
+	public sealed class Light : Behaviour
+	{
 
 		// public Light ();
 
@@ -1266,7 +361,8 @@ namespace UnityEngine
 	}
 
 	[Serializable]
-	public enum AnimationCullingType {
+	public enum AnimationCullingType
+	{
 		AlwaysAnimate,
 		BasedOnRenderers,
 		BasedOnClipBounds,
@@ -1274,7 +370,8 @@ namespace UnityEngine
 	}
 
 	[Serializable]
-	public enum WrapMode {
+	public enum WrapMode
+	{
 		Once = 1,
 		Loop = 2,
 		PingPong = 4,
@@ -1283,7 +380,7 @@ namespace UnityEngine
 		Clamp = 1
 	}
 
-	public sealed class Animation: Behaviour
+	public sealed class Animation : Behaviour
 	// , System.Collections.IEnumerable
 	{
 
@@ -1385,7 +482,7 @@ namespace UnityEngine
 		}
 	}
 
-	public class MonoBehaviour: Behaviour
+	public class MonoBehaviour : Behaviour
 	{
 		// public MonoBehaviour ();
 
@@ -1423,7 +520,7 @@ namespace UnityEngine
 		// public bool useGUILayout { get; set; }
 	}
 
-	public sealed class LightProbeGroup: Component
+	public sealed class LightProbeGroup : Component
 	{
 		// public LightProbeGroup ();
 
@@ -1525,14 +622,15 @@ namespace UnityEngine
 	}
 
 	[Serializable]
-	public enum RenderingPath {
+	public enum RenderingPath
+	{
 		UsePlayerSettings = -1,
 		VertexLit = 0,
 		Forward,
 		DeferredLighting
 	}
 
-	public sealed class Camera: Behaviour
+	public sealed class Camera : Behaviour
 	{
 		// public Camera ();
 
@@ -1655,7 +753,7 @@ namespace UnityEngine
 		public static Camera main;
 	}
 
-	public sealed class AudioListener: Behaviour
+	public sealed class AudioListener : Behaviour
 	{
 		// public AudioListener ();
 
@@ -1669,7 +767,7 @@ namespace UnityEngine
 		// public AudioVelocityUpdateMode velocityUpdateMode { get; set; }
 	}
 
-	public class Collider: Component
+	public class Collider : Component
 	{
 		// public Collider ();
 
@@ -1691,7 +789,7 @@ namespace UnityEngine
 		// public PhysicMaterial sharedMaterial { get; set; }
 	}
 
-	public sealed class MeshCollider: Collider
+	public sealed class MeshCollider : Collider
 	{
 		// public MeshCollider ();
 
