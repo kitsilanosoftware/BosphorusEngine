@@ -3,14 +3,9 @@ using YamlDotNet.Serialization;
 
 namespace UnityEngine
 {
-	public enum ForceMode2D
-	{
-		Force,
-		Impulse
-	}
-
 	[Serializable]
-	[Flags]
+	[Flags] // TODO - These will need explicit values assigned to be correct, probably 1, 2, 4, 8, etc.
+	// See http://stackoverflow.com/questions/8447/what-does-the-flags-enum-attribute-mean-in-c.
 	public enum HideFlags
 	{
 		None,
