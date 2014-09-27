@@ -5,8 +5,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{013089B6-34EA-4644-978A-66F6EDC2D280}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Disunity.UnityEngine</RootNamespace>
-    <AssemblyName>Disunity.UnityEngine</AssemblyName>
+    <RootNamespace>BosphorusEngine</RootNamespace>
+    <AssemblyName>BosphorusEngine</AssemblyName>
     <ProductVersion>12.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
@@ -103,7 +103,7 @@
     <Folder Include="Source\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Disunity\YamlDotNet\YamlDotNet\YamlDotNet.csproj">
+    <ProjectReference Include="..\Disunity\YamlDotNet\YamlDotNet\YamlDotNet.csproj">
       <Project>{BF32DE1B-6276-4341-B212-F8862ADBBA7A}</Project>
       <Name>YamlDotNet</Name>
     </ProjectReference>
