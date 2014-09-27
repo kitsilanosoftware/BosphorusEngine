@@ -68,6 +68,18 @@
     <Compile Include="Source\Time.cs" />
     <Compile Include="Source\Transform.cs" />
     <Compile Include="Source\Vector4.cs" />
+    <Compile Include="Source\Renderer.cs" />
+    <Compile Include="Source\MeshFilter.cs" />
+    <Compile Include="Source\ParticleSystemRenderMode.cs" />
+    <Compile Include="Source\ParticleSystemRenderer.cs" />
+    <Compile Include="Source\ParticleSystem.cs" />
+    <Compile Include="Source\Behaviour.cs" />
+    <Compile Include="Source\Input.cs" />
+    <Compile Include="Source\Vector2.cs" />
+    <Compile Include="Source\LightRenderMode.cs" />
+    <Compile Include="Source\LightShadows.cs" />
+    <Compile Include="Source\LightType.cs" />
+    <Compile Include="Source\Light.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
