@@ -35,7 +35,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\ForceMode2D.cs" />
-    <Compile Include="UnityEngine.cs" />
     <Compile Include="Source\HideFlags.cs" />
     <Compile Include="Source\KeyCode.cs" />
     <Compile Include="Source\HideInInspector.cs" />
@@ -80,6 +79,24 @@
     <Compile Include="Source\LightShadows.cs" />
     <Compile Include="Source\LightType.cs" />
     <Compile Include="Source\Light.cs" />
+    <Compile Include="Source\Animation.cs" />
+    <Compile Include="Source\AnimationCullingType.cs" />
+    <Compile Include="Source\WrapMode.cs" />
+    <Compile Include="Source\Coroutine.cs" />
+    <Compile Include="Source\WaitForSeconds.cs" />
+    <Compile Include="Source\RaycastHit2D.cs" />
+    <Compile Include="Source\Physics2D.cs" />
+    <Compile Include="Source\MonoBehaviour.cs" />
+    <Compile Include="Source\Collider.cs" />
+    <Compile Include="Source\MeshCollider.cs" />
+    <Compile Include="Source\AudioListener.cs" />
+    <Compile Include="Source\Camera.cs" />
+    <Compile Include="Source\RenderingPath.cs" />
+    <Compile Include="Source\Rect.cs" />
+    <Compile Include="Source\Mathf.cs" />
+    <Compile Include="Source\LayerMask.cs" />
+    <Compile Include="Source\LightProbeGroup.cs" />
+    <Compile Include="Source\CameraClearFlags.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
