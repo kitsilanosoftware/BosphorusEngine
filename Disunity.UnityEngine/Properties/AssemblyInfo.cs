@@ -4,12 +4,12 @@ using System.Runtime.CompilerServices;
 // Information about this assembly is defined by the following attributes.
 // Change them to the values specific to your project.
 
-[assembly: AssemblyTitle ("Disunity.UnityEngine")]
-[assembly: AssemblyDescription ("")]
+[assembly: AssemblyTitle ("BosphorusEngine")]
+[assembly: AssemblyDescription ("Alternative implementation of the Unity3D UnityEngine.dll assembly")]
 [assembly: AssemblyConfiguration ("")]
-[assembly: AssemblyCompany ("")]
-[assembly: AssemblyProduct ("")]
-[assembly: AssemblyCopyright ("dash")]
+[assembly: AssemblyCompany ("Kitsilano Software Inc")]
+[assembly: AssemblyProduct ("Bosphorus")]
+[assembly: AssemblyCopyright ("Copyright (c) 2014 Kitsilano Software Inc")]
 [assembly: AssemblyTrademark ("")]
 [assembly: AssemblyCulture ("")]
 
