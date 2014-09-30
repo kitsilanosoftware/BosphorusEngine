@@ -22,7 +22,10 @@ namespace UnityEngine
 		
 		[YamlAlias("m_LightmapsMode")]
 		public /* static */ LightmapsMode lightmapsMode { get; set; }
-		
+
+		[YamlAlias("m_UseDualLightmapsInForward")]
+		public /* static */ bool useDualLightmapsInForward { get; set; }
+
 		// public static LightProbes lightProbes { get; set; }
 	}
 }
