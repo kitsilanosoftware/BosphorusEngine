@@ -1,5 +1,5 @@
 //------------------------------------------------------------------------------
-// SceneSettings.cs
+// OcclusionBakeSettings.cs
 //
 // This file is part of the Bosphorus project.
 //
@@ -12,13 +12,10 @@ using YamlDotNet.Serialization;
 
 namespace UnityEngine
 {
-	public class SceneSettings : Object
+	public struct OcclusionBakeSettings
 	{
-		//m_PVSData: 
-		//m_PVSObjectsArray: []
-		//m_PVSPortalsArray: []
-
-		[YamlAlias("m_OcclusionBakeSettings")]
-		public OcclusionBakeSettings occlusionBakeSettings;
+		public int smallestOccluder;
+		public float smallestHole;
+		public int backfaceThreshold;
 	}
 }

@@ -95,6 +95,7 @@
     <Compile Include="Source\LayerMask.cs" />
     <Compile Include="Source\LightProbeGroup.cs" />
     <Compile Include="Source\CameraClearFlags.cs" />
+    <Compile Include="Source\OcclusionBakeSettings.cs" />
     <Compile Include="Source\SceneSettings.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
