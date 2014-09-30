@@ -75,7 +75,7 @@ namespace UnityEngine
 		// public void SendMessageUpwards (string methodName, SendMessageOptions options);
 		public void SetActive(bool value)
 		{
-			active = value;
+			activeSelf = value;
 		}
 		// public void SetActiveRecursively (bool state);
 		// public void StopAnimation ();
@@ -87,10 +87,9 @@ namespace UnityEngine
 		
 		[YamlAlias("m_IsActive")]
 		public bool active { get; set; }
-		public bool activeSelf { get; set; } // TODO - What is correct here?  active or activeSelf?
-		
+
 		// public bool activeInHierarchy { get; }
-		// public bool activeSelf { get; }
+		public bool activeSelf { get; set; }
 		// public Animation animation { get; }
 		// public AudioSource audio { get; }
 		// public Camera camera { get; }
@@ -105,7 +104,7 @@ namespace UnityEngine
 		
 		// Not a direct mapping.
 		// [YamlAlias("m_StaticEditorFlags")]
-		// public bool isStatic { get; set; }
+		// public bool isStatic { get; set; } // 0 or 0xFFFFFFFF
 		
 		[YamlAlias("m_Layer")]
 		public int layer { get; set; }
