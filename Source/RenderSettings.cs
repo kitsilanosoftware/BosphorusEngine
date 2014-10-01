@@ -44,8 +44,13 @@ namespace UnityEngine
 		[YamlAlias("m_HaloStrength")]
 		public /* static */ float haloStrength { get; set; }
 		
-		// TODO: fileID mapping.
-		// [YamlAlias("m_SkyboxMaterial")]
-		// public /* static */ Material skybox { get; set; }
+		[YamlAlias("m_SkyboxMaterial")]
+		public ComponentReference skybox { get; set; }
+
+		[YamlAlias("m_HaloTexture")]
+		public ComponentReference haloTexture { get; set; }
+
+		[YamlAlias("m_SpotCookie")]
+		public ComponentReference spotCookie { get; set; }
 	}
 }

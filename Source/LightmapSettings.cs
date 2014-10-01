@@ -26,6 +26,7 @@ namespace UnityEngine
 		[YamlAlias("m_UseDualLightmapsInForward")]
 		public /* static */ bool useDualLightmapsInForward { get; set; }
 
-		// public static LightProbes lightProbes { get; set; }
+		[YamlAlias("m_LightProbes")]
+		public ComponentReference lightProbes { get; set; }
 	}
 }

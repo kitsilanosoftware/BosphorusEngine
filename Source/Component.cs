@@ -8,6 +8,8 @@
 // Copyright (c) 2014 Kitsilano Software Inc (http://kitsilanosoftware.com)
 //------------------------------------------------------------------------------
 
+using YamlDotNet.Serialization;
+
 namespace UnityEngine
 {
 	public class Component : Object
@@ -75,7 +77,16 @@ namespace UnityEngine
 		// public Collider collider { get; }
 		// public Collider2D collider2D { get; }
 		// public ConstantForce constantForce { get; }
-		public GameObject gameObject { get; set; }
+
+		[YamlAlias("m_PrefabParentObject")]
+		public ComponentReference prefabParentObject { get; set; }
+
+		[YamlAlias("m_PrefabInternal")]
+		public ComponentReference prefabInternal { get; set; }
+
+		[YamlAlias("m_GameObject")]
+		public ComponentReference gameObject { get; set; }
+
 		// public GUIElement guiElement { get; }
 		public GUIText guiText { get; set; }
 		// public GUITexture guiTexture { get; }

@@ -64,7 +64,7 @@ namespace UnityEngine
 		// public Vector3 forward { get; set; }
 		// public bool hasChanged { get; set; }
 		// public Vector3 localEulerAngles { get; set; }
-		
+
 		[YamlAlias("m_LocalPosition")]
 		public Vector3 localPosition { get; set; }
 		
@@ -73,7 +73,10 @@ namespace UnityEngine
 		
 		[YamlAlias("m_LocalScale")]
 		public Vector3 localScale { get; set; }
-		
+
+		[YamlAlias("m_Children")]
+		public ComponentReference[] children { get; set; }
+
 		// public Matrix4x4 localToWorldMatrix { get; }
 		// public Vector3 lossyScale { get; }
 		public Transform parent { get; set; }

@@ -8,10 +8,22 @@
 // Copyright (c) 2014 Kitsilano Software Inc (http://kitsilanosoftware.com)
 //------------------------------------------------------------------------------
 
+using System.Collections.Generic;
 using YamlDotNet.Serialization;
 
 namespace UnityEngine
 {
+	public class ComponentReference
+	{
+		public int fileID;
+	}
+
+	public class ComponentList
+	{
+		public Dictionary<int, int> dictionary = new Dictionary<int, int>();
+	}
+
+
 	public sealed class GameObject : Object
 	{
 		// public GameObject (string name);
@@ -88,6 +100,9 @@ namespace UnityEngine
 		[YamlAlias("m_IsActive")]
 		public bool active { get; set; }
 
+		[YamlAlias("m_Component")]
+		public ComponentList componentReferences { get; set; }
+
 		// public bool activeInHierarchy { get; }
 		public bool activeSelf { get; set; }
 		// public Animation animation { get; }
@@ -101,6 +116,9 @@ namespace UnityEngine
 		public GUIText guiText;
 		public GUITexture guiTexture;
 		// public HingeJoint hingeJoint { get; }
+
+		[YamlAlias("m_Icon")]
+		public ComponentReference icon { get; set; }
 		
 		// Not a direct mapping.
 		// [YamlAlias("m_StaticEditorFlags")]
