@@ -91,17 +91,32 @@ namespace UnityEngine
 		}
 		// public void SetActiveRecursively (bool state);
 		// public void StopAnimation ();
-		
+
 		public static implicit operator bool(GameObject obj)
 		{
 			return false;
 		}
-		
+
 		[YamlAlias("m_IsActive")]
 		public bool active { get; set; }
 
 		[YamlAlias("m_Component")]
 		public ComponentList componentReferences { get; set; }
+
+		public override void ResolveSerializationReferences()
+		{
+			if (componentReferences.dictionary.ContainsKey(YAMLClassIDs.Transform))
+			{
+				var anchor = componentReferences.dictionary[YAMLClassIDs.Transform];
+				transform = (Transform)FindObjectBySerializationAnchor(anchor);
+			}
+
+			if (componentReferences.dictionary.ContainsKey(YAMLClassIDs.MonoBehaviour))
+			{
+				var anchor = componentReferences.dictionary[YAMLClassIDs.MonoBehaviour];
+				monoBehaviour = (MonoBehaviour)FindObjectBySerializationAnchor(anchor);
+			}
+		}
 
 		// public bool activeInHierarchy { get; }
 		public bool activeSelf { get; set; }
@@ -138,7 +153,8 @@ namespace UnityEngine
 		[YamlAlias("m_TagString")]
 		public string tag { get; set; }
 		
-		public Transform transform;
+		Transform transform = null;
+		MonoBehaviour monoBehaviour = null;
 	}
 	
 

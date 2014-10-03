@@ -98,6 +98,7 @@
     <Compile Include="Source\OcclusionBakeSettings.cs" />
     <Compile Include="Source\SceneSettings.cs" />
     <Compile Include="Source\LevelGameManager.cs" />
+    <Compile Include="Source\YAMLClassIDs.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

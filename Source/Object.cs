@@ -8,6 +8,7 @@
 // Copyright (c) 2014 Kitsilano Software Inc (http://kitsilanosoftware.com)
 //------------------------------------------------------------------------------
 
+using System.Collections.Generic;
 using YamlDotNet.Serialization;
 
 namespace UnityEngine
@@ -19,6 +20,21 @@ namespace UnityEngine
 		}
 		
 		public static void Destroy(Object obj, float t)
+		{
+		}
+
+		public void SetSerializationAnchor(int anchor)
+		{
+			yamlSerializationAnchor = anchor;
+			dictionaryOfObjects[yamlSerializationAnchor] = this;
+		}
+
+		public Object FindObjectBySerializationAnchor(int anchor)
+		{
+			return dictionaryOfObjects[anchor];
+		}
+
+		public virtual void ResolveSerializationReferences()
 		{
 		}
 		
@@ -47,11 +63,24 @@ namespace UnityEngine
 		// public static implicit operator bool (Object exists);
 		// public static bool operator == (Object x, Object y);
 		// public static bool operator != (Object x, Object y);
-		
+
+		/// <summary>
+		/// A dictionary mapping unique IDs to Object instances;
+		/// </summary>
+		static Dictionary<int, Object> dictionaryOfObjects = new Dictionary<int, Object>();
+
 		[YamlAlias("m_ObjectHideFlags")]
 		public HideFlags hideFlags { get; set; }
 		
 		[YamlAlias("m_Name")]
 		public string name { get; set; }
+
+		/// <summary>
+		/// Serialization anchor (AKA unique ID) for this object within the
+		/// YAML scene.   Just going to stuff this directly into the object
+		/// itself for the time being.  We can do a second pass in the deserialization
+		/// to resolve these into object references.
+		/// </summary>
+		public int yamlSerializationAnchor { get; set; }
 	}
 }
